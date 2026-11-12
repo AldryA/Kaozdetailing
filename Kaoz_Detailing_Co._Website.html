@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#09090b]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAOZ DETAILING | Mobile Detailing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#09090b',
+                        panel: '#121216',
+                        panelHover: '#1a1a20',
+                        crimson: '#e60000',
+                        crimsonHover: '#cc0000',
+                        textMuted: '#a1a1aa'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f4f4f5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e60000; }
+        ::selection { background-color: #e60000; color: #ffffff; }
+
+        /* Custom Radio & Checkbox Styles */
+        .custom-radio:checked + div {
+            border-color: #e60000;
+            background-color: rgba(230, 0, 0, 0.05);
+        }
+        .custom-checkbox:checked + div {
+            border-color: #e60000;
+            background-color: rgba(230, 0, 0, 0.05);
+        }
+        .custom-checkbox:checked + div .check-indicator {
+            background-color: #e60000;
+            border-color: #e60000;
+        }
+        .custom-checkbox:checked + div .check-indicator i {
+            opacity: 1;
+        }
+        .custom-checkbox:disabled + div {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        
+        input:focus, textarea:focus { outline: none; border-color: #e60000; box-shadow: 0 0 0 1px #e60000; }
+        
+        .fade-in { animation: fadeIn 0.8s ease-in-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="selection:bg-crimson selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
+            
+            <!-- CSS Logo -->
+            <a href="#" class="flex flex-col items-start leading-none tracking-tighter cursor-pointer no-underline group hover:opacity-90 transition-opacity">
+                <div class="text-3xl sm:text-4xl font-black flex items-baseline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#ffffff] via-[#d4d4d8] to-[#71717a]">KAO</span>
+                    <span class="text-crimson">Z</span>
+                </div>
+                <div class="text-[8px] sm:text-[10px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d4d4d8] to-[#a1a1aa] tracking-[0.45em] uppercase mt-0.5 w-full pl-0.5">
+                    DETAILING
+                </div>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <a href="#calculator" class="hidden sm:flex items-center gap-2 text-sm font-semibold text-white hover:text-crimson transition-colors">
+                    <i class="fa-solid fa-calculator text-crimson"></i> Estimate
+                </a>
+                <a href="sms:18434505051" class="px-5 py-2.5 bg-crimson hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-colors shadow-[0_0_15px_rgba(230,0,0,0.3)]">
+                    Text Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative pt-24 pb-20 px-5 border-b border-white/5 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-crimson/10 rounded-full blur-[150px] pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10 fade-in text-center sm:text-left flex flex-col sm:items-start items-center">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-[1px] bg-crimson hidden sm:block"></div>
+                <span class="text-xs font-mono font-bold text-crimson uppercase tracking-[0.2em]">
+                    Premium Mobile Service
+                </span>
+                <div class="w-8 h-[1px] bg-crimson hidden sm:block"></div>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase mb-6 text-white">
+                KAOZ<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson to-red-500">DETAILING</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-textMuted max-w-2xl leading-relaxed mb-4 font-medium">
+                FULL SERVICE TO YOUR DRIVEWAY. Corrected paint, reset interiors, and a finish you can read your reflection in — booked in three minutes, deposit and all.
+            </p>
+            <p class="text-xs font-mono text-white/50 mb-10 bg-white/5 inline-block px-3 py-1.5 rounded-sm">
+                <i class="fa-solid fa-bolt text-crimson mr-1"></i> Requires outdoor water spigot and electricity access within 75ft.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#calculator" class="px-8 py-4 bg-crimson hover:bg-crimsonHover text-white text-center font-bold text-sm sm:text-base uppercase tracking-wide transition-colors flex items-center justify-center gap-3 rounded-sm">
+                    Build your estimate <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="sms:18434505051" class="px-8 py-4 bg-panel border border-white/10 hover:border-white/20 text-white text-center font-bold text-sm sm:text-base transition-colors rounded-sm">
+                    Text (843) 450-5051
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE PACKAGES -->
+    <section class="py-24 px-5 border-b border-white/5 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12 flex flex-col md:flex-row gap-6 justify-between items-end">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">Detailing Packages</h2>
+                    <p class="text-textMuted max-w-2xl text-sm leading-relaxed">Comprehensive solutions engineered for your vehicle's specific needs. All services are performed at your location.</p>
+                </div>
+                <!-- Promos -->
+                <div class="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-sm max-w-sm">
+                    <div class="text-emerald-400 font-bold text-sm flex items-center gap-2 mb-1">
+                        <i class="fa-solid fa-tags"></i> Multi-Car Discount
+                    </div>
+                    <p class="text-emerald-500/80 text-xs">$20 OFF each vehicle when 2 or more are booked at the same time.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Exterior -->
+                <div class="bg-panel border border-white/5 p-8 rounded-sm flex flex-col h-full hover:border-white/15 transition-all group">
+                    <div class="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
+                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Kaoz Exterior</h3>
+                        <div class="text-right">
+                            <span class="text-textMuted font-mono text-xs block">Approx 1-1.5 hrs</span>
+                        </div>
+                    </div>
+                    <div class="text-crimson font-mono font-bold text-xl mb-6">Starting $89 <span class="text-xs text-textMuted font-sans">Sedan</span></div>
+                    <p class="text-textMuted text-sm mb-8 flex-grow leading-relaxed">
+                        Contact wash, premium paint sealant/wax for superior water beading, deep tire shine, and door jamb cleaning.
+                    </p>
+                    <a href="#calculator" onclick="selectPackage('exterior')" class="text-white text-sm font-bold uppercase tracking-wider group-hover:text-crimson transition-colors flex items-center gap-2 mt-auto">Select <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <!-- Interior -->
+                <div class="bg-panel border border-white/5 p-8 rounded-sm flex flex-col h-full hover:border-white/15 transition-all group">
+                    <div class="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
+                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Kaoz Interior</h3>
+                        <div class="text-right">
+                            <span class="text-textMuted font-mono text-xs block">Approx 1.5-3 hrs</span>
+                        </div>
+                    </div>
+                    <div class="text-crimson font-mono font-bold text-xl mb-6">Starting $129 <span class="text-xs text-textMuted font-sans">Sedan</span></div>
+                    <p class="text-textMuted text-sm mb-4 leading-relaxed">
+                        Full vacuum including trunk, surface dust removal, UV protection for plastics, seat surface cleaning, dashboard, dressing, interior window cleaning, and door jambs.
+                    </p>
+                    <div class="bg-black/50 border border-white/5 p-3 rounded-sm mt-auto mb-8">
+                        <p class="text-[11px] text-textMuted leading-tight font-mono">
+                            <i class="fa-solid fa-circle-exclamation text-crimson"></i> Please remove all personal items prior to service; areas with personal items will be bypassed.
+                        </p>
+                    </div>
+                    <a href="#calculator" onclick="selectPackage('interior')" class="text-white text-sm font-bold uppercase tracking-wider group-hover:text-crimson transition-colors flex items-center gap-2 mt-auto">Select <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <!-- Full -->
+                <div class="bg-panel border border-white/5 p-8 rounded-sm flex flex-col h-full hover:border-white/15 transition-all group lg:col-span-1 md:col-span-2">
+                    <div class="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
+                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Kaoz Full</h3>
+                        <div class="text-right">
+                            <span class="text-textMuted font-mono text-xs block">Approx 2-4 hrs</span>
+                        </div>
+                    </div>
+                    <div class="text-crimson font-mono font-bold text-xl mb-6">Starting $219 <span class="text-xs text-textMuted font-sans">Sedan</span></div>
+                    <p class="text-textMuted text-sm mb-8 flex-grow leading-relaxed">
+                        The complete package combining both Interior and Exterior services into a single, comprehensive appointment for a total vehicle refresh.
+                    </p>
+                    <a href="#calculator" onclick="selectPackage('full')" class="text-white text-sm font-bold uppercase tracking-wider group-hover:text-crimson transition-colors flex items-center gap-2 mt-auto">Select <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <!-- Reset (Featured) -->
+                <div class="bg-gradient-to-br from-panel to-[#1a0505] border border-crimson/30 p-8 rounded-sm flex flex-col h-full shadow-[0_0_30px_rgba(230,0,0,0.05)] md:col-span-2 lg:col-span-3 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-crimson text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-6 shadow-md">Ultimate Interior</div>
+                    
+                    <div class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-3xl font-black text-white uppercase tracking-tight">Kaoz Reset</h3>
+                                <span class="text-textMuted font-mono text-sm block">3+ hours</span>
+                            </div>
+                            <div class="text-crimson font-mono font-bold text-2xl mb-4">
+                                Starting $349 <span class="text-sm text-textMuted font-sans">Sedan</span>
+                            </div>
+                            <p class="text-textMuted text-sm leading-relaxed mb-4">
+                                The ultimate interior deep clean. Includes everything in the Kaoz Interior package <strong>PLUS:</strong>
+                            </p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm text-white/90 mb-6">
+                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Seat & Carpet Shampoo/Extraction</li>
+                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Headliner Cleaning</li>
+                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Steam Cleaning</li>
+                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Leather Conditioner</li>
+                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Interior Ceramic Protectant</li>
+                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Rubber Floor Mat Deep Clean</li>
+                            </ul>
+                            <p class="text-xs text-textMuted font-mono italic">* Exterior wash available as an add-on during estimate building.</p>
+                        </div>
+                        <div class="lg:w-48 shrink-0 flex flex-col justify-end h-full w-full">
+                            <a href="#calculator" onclick="selectPackage('reset')" class="w-full py-4 bg-crimson hover:bg-crimsonHover text-white text-center text-sm font-bold uppercase tracking-wider transition-colors rounded-sm shadow-lg">
+                                Build Estimate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP MEMBERSHIPS -->
+    <section class="py-24 px-5 bg-panel/30 border-b border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">VIP Maintenance</h2>
+                <p class="text-textMuted max-w-2xl mx-auto text-sm leading-relaxed">
+                    Keep your vehicle pristine year-round with our locked-in recurring plans.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:px-12 mb-10">
+                <div class="bg-panel border border-white/10 p-8 rounded-sm text-center hover:-translate-y-1 transition-transform">
+                    <h3 class="font-black text-white text-xl uppercase mb-2">Exterior VIP</h3>
+                    <div class="text-crimson font-mono font-bold text-3xl mb-4">$69<span class="text-sm text-textMuted font-sans">/mo</span></div>
+                    <p class="text-textMuted text-sm">Monthly upkeep of exterior gloss, paint protection, and wheel clarity.</p>
+                </div>
+                <div class="bg-panel border border-white/10 p-8 rounded-sm text-center hover:-translate-y-1 transition-transform">
+                    <h3 class="font-black text-white text-xl uppercase mb-2">Interior VIP</h3>
+                    <div class="text-crimson font-mono font-bold text-3xl mb-4">$89<span class="text-sm text-textMuted font-sans">/mo</span></div>
+                    <p class="text-textMuted text-sm">Monthly maintenance to keep your cabin spotless, protected, and fresh.</p>
+                </div>
+                <div class="bg-gradient-to-b from-panel to-[#110505] border border-crimson/50 p-8 rounded-sm text-center relative hover:-translate-y-1 transition-transform shadow-[0_10px_30px_rgba(230,0,0,0.05)]">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-crimson text-white text-[10px] font-bold uppercase tracking-widest py-1 px-4 rounded-sm whitespace-nowrap">Ultimate Value</div>
+                    <h3 class="font-black text-white text-xl uppercase mb-2 mt-2">Full VIP</h3>
+                    <div class="text-crimson font-mono font-bold text-3xl mb-4">$129<span class="text-sm text-textMuted font-sans">/mo</span></div>
+                    <p class="text-textMuted text-sm">Complete inside and out monthly maintenance. Always looking freshly detailed.</p>
+                </div>
+            </div>
+
+            <!-- Restored Membership Terms -->
+            <div class="bg-obsidian border border-white/5 p-6 rounded-sm max-w-4xl mx-auto shadow-inner">
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-crimson"></i> Membership Terms
+                </h4>
+                <p class="text-sm text-textMuted leading-relaxed">
+                    Prices are firm regardless of vehicle size. Customers must go through an initial service of either full, exterior, or interior to opt into a membership. Going through a full detail allows sign-up for any tier. Memberships include Priority scheduling, money saving, 1 service per month (weekly or biweekly can be discussed), and <strong>1 free service during your birthday month</strong>. Vehicle must stay in normal conditions; heavy stains, heavy mud, etc., that could add hours to the job are subject to an extra charge and will be discussed with the client.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section id="calculator" class="py-24 px-5 border-b border-white/5 scroll-mt-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">Build Your Estimate</h2>
+                <p class="text-textMuted max-w-2xl text-sm leading-relaxed">Select your vehicle size, choose a core package, and customize with add-ons. <strong>A 50% deposit is required to secure your appointment.</strong></p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Left: Controls -->
+                <div class="lg:col-span-8 space-y-8">
+                    
+                    <!-- 1. Size -->
+                    <div class="bg-panel border border-white/5 p-6 sm:p-8 rounded-sm">
+                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-5 flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-crimson/20 text-crimson flex items-center justify-center text-xs">1</span> 
+                            Vehicle Size
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="cursor-pointer block relative">
+                                <input type="radio" name="calc-size" value="small" class="sr-only custom-radio" checked onchange="calculateQuote()">
+                                <div class="p-5 border border-white/10 bg-obsidian transition-colors flex items-center justify-between rounded-sm h-full">
+                                    <span class="text-sm font-bold text-white uppercase tracking-wider">Sedan / Coupe</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer block relative">
+                                <input type="radio" name="calc-size" value="large" class="sr-only custom-radio" onchange="calculateQuote()">
+                                <div class="p-5 border border-white/10 bg-obsidian transition-colors flex items-center justify-between rounded-sm h-full">
+                                    <span class="text-sm font-bold text-white uppercase tracking-wider">Large (SUV/Truck)</span>
+                                    <span class="text-xs text-crimson font-mono font-bold shrink-0 ml-2">+$40</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 2. Package -->
+                    <div class="bg-panel border border-white/5 p-6 sm:p-8 rounded-sm">
+                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-5 flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-crimson/20 text-crimson flex items-center justify-center text-xs">2</span> 
+                            Core Package
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="cursor-pointer block relative">
+                                <input type="radio" name="calc-pkg" value="exterior" class="sr-only custom-radio" checked onchange="calculateQuote()">
+                                <div class="p-5 border border-white/10 bg-obsidian transition-colors rounded-sm">
+                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1">Exterior</div>
+                                    <div class="text-xs text-textMuted font-mono">Starts $89</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer block relative">
+                                <input type="radio" name="calc-pkg" value="interior" class="sr-only custom-radio" onchange="calculateQuote()">
+                                <div class="p-5 border border-white/10 bg-obsidian transition-colors rounded-sm">
+                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1">Interior</div>
+                                    <div class="text-xs text-textMuted font-mono">Starts $129</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer block relative">
+                                <input type="radio" name="calc-pkg" value="full" class="sr-only custom-radio" onchange="calculateQuote()">
+                                <div class="p-5 border border-white/10 bg-obsidian transition-colors rounded-sm">
+                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1">Full Detail</div>
+                                    <div class="text-xs text-textMuted font-mono">Starts $219</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer block relative">
+                                <input type="radio" name="calc-pkg" value="reset" class="sr-only custom-radio" onchange="calculateQuote()">
+                                <div class="p-5 border border-crimson/30 bg-gradient-to-br from-obsidian to-[#1a0505] transition-colors rounded-sm shadow-[0_0_15px_rgba(230,0,0,0.1)]">
+                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1 flex items-center justify-between">
+                                        Reset (Deep Clean) <i class="fa-solid fa-star text-crimson text-[10px]"></i>
+                                    </div>
+                                    <div class="text-xs text-textMuted font-mono">Starts $349</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div id="reset-warning" class="hidden mt-4 bg-crimson/10 border border-crimson/20 p-3 rounded-sm text-xs text-white">
+                            <i class="fa-solid fa-circle-info text-crimson mr-2"></i> <strong>Kaoz Reset Selected:</strong> Standard interior add-ons (shampoo, steam, leather, etc.) are already included in the base price and have been disabled below.
+                        </div>
+                    </div>
+
+                    <!-- 3. Add-ons -->
+                    <div class="bg-panel border border-white/5 p-6 sm:p-8 rounded-sm">
+                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-5 flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-crimson/20 text-crimson flex items-center justify-center text-xs">3</span> 
+                            Specific Add-ons
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="addons-container">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Summary -->
+                <div class="lg:col-span-4">
+                    <div class="bg-obsidian border border-white/10 p-6 sm:p-8 rounded-sm sticky top-28 shadow-2xl">
+                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-6 pb-4 border-b border-white/10">Estimate Summary</h3>
+                        
+                        <div class="space-y-3 text-sm mb-6 pb-6 border-b border-white/10" id="quote-line-items">
+                            <!-- Populated by JS -->
+                        </div>
+
+                        <div class="flex items-end justify-between mb-3">
+                            <span class="text-textMuted text-sm font-semibold uppercase tracking-wider">Estimated Total</span>
+                            <span class="text-2xl font-mono font-bold text-white" id="quote-total">$0</span>
+                        </div>
+                        <div class="flex items-end justify-between mb-8 bg-panel p-4 rounded-sm border border-white/5">
+                            <div class="flex flex-col">
+                                <span class="text-white font-black uppercase text-sm tracking-wider">50% Deposit</span>
+                                <span class="text-[10px] text-textMuted uppercase mt-1">Required to book</span>
+                            </div>
+                            <span class="text-xl font-mono font-bold text-crimson" id="quote-deposit">$0</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <a id="sms-btn" href="#" class="block w-full py-4 bg-crimson hover:bg-crimsonHover text-white text-center font-bold text-sm uppercase tracking-wider transition-colors rounded-sm shadow-[0_5px_20px_rgba(230,0,0,0.25)] flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Text to Book
+                            </a>
+                            <p class="text-[11px] text-textMuted text-center leading-relaxed font-mono">
+                                Tapping will format a text message with your quote details to <span class="text-white font-bold">(843) 450-5051</span>.<br>Final price confirmed in-person.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RV/BOATS & FAQ -->
+    <section class="py-24 px-5 bg-panel border-b border-white/5">
+        <div class="max-w-4xl mx-auto space-y-16">
+            
+            <!-- RV/Boat Banner -->
+            <div class="bg-gradient-to-r from-obsidian to-[#111] border border-white/10 p-8 rounded-sm flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                <div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-ship text-crimson"></i> RV, Boats & Specialty
+                    </h3>
+                    <p class="text-textMuted text-sm leading-relaxed max-w-lg">Pricing varies heavily by condition and size. Contact us directly to discuss your specific needs and get a custom quote.</p>
+                </div>
+                <a href="sms:18434505051" class="shrink-0 px-8 py-3 border border-crimson text-crimson hover:bg-crimson hover:text-white font-bold text-sm uppercase tracking-wide rounded-sm transition-colors w-full md:w-auto text-center">
+                    Message Us
+                </a>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mb-10 tracking-tight uppercase text-center">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
+                        <h4 class="text-white font-bold text-lg mb-2">Do you come to my location?</h4>
+                        <p class="text-textMuted text-sm leading-relaxed">Yes, we provide convenient mobile service directly to your driveway. We only require access to an outdoor water spigot and an electrical outlet.</p>
+                    </div>
+                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
+                        <h4 class="text-white font-bold text-lg mb-2">Can you detail my car at my job site or gym?</h4>
+                        <p class="text-textMuted text-sm leading-relaxed">Currently, we cannot service vehicles at locations like job sites or gyms where we do not have direct access to water and electricity.</p>
+                    </div>
+                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
+                        <h4 class="text-white font-bold text-lg mb-2">Are the prices on the website final?</h4>
+                        <p class="text-textMuted text-sm leading-relaxed">The prices listed are estimated starting rates based on standard vehicle sizes and conditions. The final quote is discussed via message and confirmed during a brief in-person inspection with you before the job begins.</p>
+                    </div>
+                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
+                        <h4 class="text-white font-bold text-lg mb-2">What areas do you service?</h4>
+                        <p class="text-textMuted text-sm leading-relaxed">We proudly serve the greater Jacksonville, FL area, including North Jacksonville, St. Johns, Orange Park, and Jacksonville Beach. Please note that extended travel outside our primary service radius may be subject to a mileage fee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="py-24 px-5 border-b border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">Still have questions?</h2>
+                <p class="text-textMuted text-sm">Fill out the form below and we will get back to you.</p>
+            </div>
+
+            <form id="contact-form" class="bg-panel border border-white/5 p-8 rounded-sm space-y-6" onsubmit="event.preventDefault(); this.innerHTML = '<div class=\'text-center py-10 fade-in\'><i class=\'fa-solid fa-circle-check text-emerald-500 text-4xl mb-4\'></i><h3 class=\'text-white font-bold text-xl\'>Inquiry Sent</h3><p class=\'text-textMuted text-sm mt-2\'>We will review your details and get back to you shortly.</p></div>';">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Name</label>
+                        <input type="text" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Phone</label>
+                        <input type="tel" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Email</label>
+                        <input type="email" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Vehicle Make/Model</label>
+                        <input type="text" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Service(s) Requested & Questions</label>
+                    <textarea rows="4" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-crimson hover:bg-crimsonHover text-white font-bold text-sm uppercase tracking-wide rounded-sm transition-colors mt-2">
+                    Send Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 px-5 bg-obsidian border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                
+                <!-- CSS Logo (Muted) -->
+                <div class="flex flex-col items-start leading-none tracking-tighter opacity-50 hover:opacity-100 transition-opacity">
+                    <div class="text-2xl font-black flex items-baseline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#ffffff] via-[#d4d4d8] to-[#71717a]">KAO</span>
+                        <span class="text-crimson">Z</span>
+                    </div>
+                    <div class="text-[7px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d4d4d8] to-[#a1a1aa] tracking-[0.45em] uppercase mt-0.5 w-full pl-[1px]">
+                        DETAILING
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left text-xs text-textMuted font-mono">
+                    &copy; 2026 Kaoz Detailing Co. All rights reserved.<br>
+                    <a href="tel:8434505051" class="hover:text-white transition-colors">843-450-5051</a>
+                </div>
+            </div>
+
+            <div>
+                <a href="https://www.instagram.com/kaoz_detailing?exln=YWFvOHIyeG5kbDN2&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center rounded-sm bg-panel border border-white/10 hover:border-crimson hover:text-white text-textMuted hover:bg-crimson transition-all group">
+                    <i class="fa-brands fa-instagram text-xl group-hover:scale-110 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS LOGIC -->
+    <script>
+        // Core Packages Definition (Fixed: All large surcharges are +$40)
+        const packages = {
+            exterior: { name: 'Kaoz Exterior', baseSm: 89, addLg: 40 },
+            interior: { name: 'Kaoz Interior', baseSm: 129, addLg: 40 },
+            full: { name: 'Kaoz Full', baseSm: 219, addLg: 40 },
+            reset: { name: 'Kaoz Reset', baseSm: 349, addLg: 40 }
+        };
+
+        // All Possible Add-ons
+        const allAddons = [
+            { id: 'engine', name: 'Engine Bay', price: 79 },
+            { id: 'pethair', name: 'Heavy Pet Hair', price: 49 },
+            { id: 'odor', name: 'Odor Removal', price: 69 },
+            { id: 'seatshampoo', name: 'Seat Shampoo/Extraction', price: 49 },
+            { id: 'carpetshampoo', name: 'Carpet Shampoo/Extraction', price: 49 },
+            { id: 'headliner', name: 'Headliner', price: 49 },
+            { id: 'trim', name: 'Trim Restorer', price: 49 },
+            { id: 'leather', name: 'Leather Conditioner', price: 29 },
+            { id: 'ceramic', name: 'Ceramic Int. Protection', price: 49 },
+            { id: 'mats', name: 'Rubber Mats Deep Clean', price: 19 },
+            { id: 'steam', name: 'Steam Cleaning', price: 29 },
+            { id: 'childseat', name: 'Child Seat (Cust. Reinstalls)', price: 29 },
+            { id: 'reset_exterior', name: 'Exterior Wash (Add-on)', price: 89 }
+        ];
+
+        // Add-ons to explicitly disable/hide when 'Kaoz Reset' is chosen
+        const resetIncludedAddons = ['seatshampoo', 'carpetshampoo', 'headliner', 'leather', 'ceramic', 'mats', 'steam'];
+
+        // Inject HTML
+        const addonsContainer = document.getElementById('addons-container');
+        allAddons.forEach(addon => {
+            const html = `
+                <label class="cursor-pointer block relative addon-wrapper" id="wrapper-${addon.id}">
+                    <input type="checkbox" value="${addon.id}" id="chk-${addon.id}" class="sr-only custom-checkbox calc-addon" onchange="calculateQuote()">
+                    <div class="p-4 border border-white/10 bg-obsidian transition-colors flex items-center justify-between rounded-sm h-full">
+                        <div class="flex items-center gap-3">
+                            <div class="check-indicator w-4 h-4 rounded-sm border border-white/20 flex shrink-0 items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check text-[10px] text-white opacity-0 transition-opacity"></i>
+                            </div>
+                            <span class="text-xs font-bold text-white uppercase tracking-wider addon-label">${addon.name}</span>
+                        </div>
+                        <span class="text-xs text-crimson font-mono font-bold shrink-0 ml-2">+$${addon.price}</span>
+                    </div>
+                </label>
+            `;
+            addonsContainer.insertAdjacentHTML('beforeend', html);
+        });
+
+        // External function to trigger package select from hero/package cards
+        function selectPackage(pkgId) {
+            document.querySelector(`input[name="calc-pkg"][value="${pkgId}"]`).checked = true;
+            calculateQuote();
+            
+            // Small offset for fixed header
+            const yOffset = -100; 
+            const element = document.getElementById('calculator');
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+
+        // Main Calculation and UI adjustment Logic
+        function calculateQuote() {
+            const size = document.querySelector('input[name="calc-size"]:checked').value;
+            const pkgKey = document.querySelector('input[name="calc-pkg"]:checked').value;
+            const pkg = packages[pkgKey];
+            
+            const isReset = (pkgKey === 'reset');
+            const warningEl = document.getElementById('reset-warning');
+
+            // 1. Handle dynamic visibility and disabling of add-ons
+            if (isReset) {
+                warningEl.classList.remove('hidden');
+                
+                // Hide/disable included add-ons
+                resetIncludedAddons.forEach(id => {
+                    const chk = document.getElementById(`chk-${id}`);
+                    const wrapper = document.getElementById(`wrapper-${id}`);
+                    chk.checked = false;
+                    chk.disabled = true;
+                    // Visually mute them
+                    wrapper.style.display = 'none'; 
+                });
+
+                // Ensure "Exterior Wash Add-on" is visible
+                document.getElementById('wrapper-reset_exterior').style.display = 'block';
+
+            } else {
+                warningEl.classList.add('hidden');
+                
+                // Enable and show standard add-ons
+                resetIncludedAddons.forEach(id => {
+                    const chk = document.getElementById(`chk-${id}`);
+                    const wrapper = document.getElementById(`wrapper-${id}`);
+                    chk.disabled = false;
+                    wrapper.style.display = 'block';
+                });
+
+                // Hide and uncheck "Exterior Wash Add-on"
+                const extChk = document.getElementById('chk-reset_exterior');
+                extChk.checked = false;
+                document.getElementById('wrapper-reset_exterior').style.display = 'none';
+            }
+
+            // 2. Calculate Pricing
+            const basePrice = pkg.baseSm;
+            const surcharge = (size === 'large') ? pkg.addLg : 0;
+            
+            let addonsTotal = 0;
+            let addonsList = [];
+            
+            const selectedAddonNodes = document.querySelectorAll('.calc-addon:checked');
+            selectedAddonNodes.forEach(node => {
+                const addonObj = allAddons.find(a => a.id === node.value);
+                if (addonObj) {
+                    addonsTotal += addonObj.price;
+                    addonsList.push(addonObj);
+                }
+            });
+
+            const total = basePrice + surcharge + addonsTotal;
+            const deposit = total / 2;
+
+            // 3. Update Summary UI
+            const lineItemsEl = document.getElementById('quote-line-items');
+            let linesHtml = `
+                <div class="flex justify-between items-end mb-2">
+                    <span class="text-white font-bold uppercase tracking-wider">${pkg.name}</span>
+                    <span class="font-mono text-white">$${basePrice}</span>
+                </div>
+            `;
+            
+            if (surcharge > 0) {
+                linesHtml += `
+                    <div class="flex justify-between items-end mt-2">
+                        <span class="text-textMuted text-xs uppercase tracking-wider">Size: Large (SUV/Truck)</span>
+                        <span class="font-mono text-crimson text-xs">+$${surcharge}</span>
+                    </div>
+                `;
+            } else {
+                 linesHtml += `
+                    <div class="flex justify-between items-end mt-2">
+                        <span class="text-textMuted text-xs uppercase tracking-wider">Size: Sedan/Coupe</span>
+                        <span class="font-mono text-textMuted text-xs">+$0</span>
+                    </div>
+                `;
+            }
+
+            if (addonsList.length > 0) {
+                linesHtml += `<div class="mt-4 pt-4 border-t border-white/5 space-y-2">`;
+                addonsList.forEach(a => {
+                    linesHtml += `
+                        <div class="flex justify-between items-end">
+                            <span class="text-textMuted text-xs">+ ${a.name}</span>
+                            <span class="font-mono text-textMuted text-xs">+$${a.price}</span>
+                        </div>
+                    `;
+                });
+                linesHtml += `</div>`;
+            }
+
+            lineItemsEl.innerHTML = linesHtml;
+            
+            // 4. Update Totals
+            document.getElementById('quote-total').innerText = `$${total}`;
+            document.getElementById('quote-deposit').innerText = `$${deposit.toFixed(2).replace(/\.00$/, '')}`;
+
+            // 5. Build SMS Link
+            const sizeText = size === 'large' ? 'Large (Truck/SUV)' : 'Sedan/Coupe';
+            const addonText = addonsList.length > 0 ? addonsList.map(a => a.name).join(', ') : 'None';
+            
+            const smsBody = `Hi KAOZ DETAILING! I'd like to book an appointment.\n\nPackage: ${pkg.name}\nSize: ${sizeText}\nAdd-ons: ${addonText}\n\nEstimated Total: $${total}\nReady to pay 50% deposit: $${deposit.toFixed(2).replace(/\.00$/, '')}`;
+            
+            document.getElementById('sms-btn').href = `sms:18434505051?&body=${encodeURIComponent(smsBody)}`;
+        }
+
+        // Initialize calculator on first load
+        window.addEventListener('DOMContentLoaded', () => {
+            calculateQuote();
+        });
+    </script>
+</body>
+</html>
