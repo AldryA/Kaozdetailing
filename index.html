@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAOZ DETAILING | Mobile Detailing</title>
+    <title>KAOZ DETAILING CO. | Mobile Auto Detailing Jacksonville, FL</title>
+    <meta name="description" content="Full Service to Your Driveway — Professional mobile auto detailing in Jacksonville, FL that works around your busy schedule. Instant quotes & VIP maintenance memberships.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter & Montserrat for metallic logo typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script>
@@ -22,14 +23,16 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Roboto Mono', 'monospace'],
+                        display: ['Montserrat', 'Inter', 'sans-serif'],
                     },
                     colors: {
                         obsidian: '#09090b',
-                        panel: '#121216',
-                        panelHover: '#1a1a20',
-                        crimson: '#e60000',
-                        crimsonHover: '#cc0000',
+                        panel: '#121215',
+                        panelLight: '#18181c',
+                        crimson: '#dc2626',
+                        crimsonDark: '#991b1b',
+                        crimsonGlow: '#ef4444',
+                        textMain: '#f4f4f5',
                         textMuted: '#a1a1aa'
                     }
                 }
@@ -42,205 +45,578 @@
             background-color: #09090b;
             color: #f4f4f5;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #e60000; }
-        ::selection { background-color: #e60000; color: #ffffff; }
+        ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
 
-        /* Custom Radio & Checkbox Styles */
-        .custom-radio:checked + div {
-            border-color: #e60000;
-            background-color: rgba(230, 0, 0, 0.05);
+        /* Pure CSS 3D Metallic Chrome & Crimson Logo (No Car Graphic, 100% Reliable) */
+        .kaoz-logo-wrap {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            position: relative;
+            line-height: 1;
         }
-        .custom-checkbox:checked + div {
-            border-color: #e60000;
-            background-color: rgba(230, 0, 0, 0.05);
+
+        .kaoz-logo-main {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: baseline;
+            position: relative;
+            z-index: 2;
         }
-        .custom-checkbox:checked + div .check-indicator {
-            background-color: #e60000;
-            border-color: #e60000;
+
+        /* 3D Brushed Chrome / Silver Effect for "KAO" */
+        .kaoz-chrome {
+            background: linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #e4e4e7 22%,
+                #71717a 48%,
+                #f4f4f5 53%,
+                #a1a1aa 82%,
+                #52525b 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 0px #27272a) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.85));
         }
-        .custom-checkbox:checked + div .check-indicator i {
-            opacity: 1;
+
+        /* 3D Metallic Crimson Effect for "Z" */
+        .kaoz-crimson-z {
+            background: linear-gradient(
+                180deg,
+                #ff6b6b 0%,
+                #ef4444 25%,
+                #991b1b 49%,
+                #dc2626 53%,
+                #7f1d1d 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 0px #450a0a) drop-shadow(0px 4px 12px rgba(220, 38, 38, 0.45));
+            margin-left: 1px;
         }
-        .custom-checkbox:disabled + div {
-            opacity: 0.4;
-            cursor: not-allowed;
-            pointer-events: none;
+
+        /* Metallic "DETAILING" Subtitle */
+        .kaoz-logo-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.36em;
+            margin-right: -0.36em; /* Optical centering for wide letter-spacing */
+            background: linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #d4d4d8 45%,
+                #71717a 55%,
+                #e4e4e7 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 1px 4px rgba(0,0,0,0.9));
+            margin-top: 3px;
         }
-        
-        input:focus, textarea:focus { outline: none; border-color: #e60000; box-shadow: 0 0 0 1px #e60000; }
-        
-        .fade-in { animation: fadeIn 0.8s ease-in-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Tapered Chrome Blade Divider */
+        .kaoz-logo-blade {
+            width: 100%;
+            height: 2px;
+            margin-top: 4px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #a1a1aa 25%, #ffffff 50%, #a1a1aa 75%, rgba(255,255,255,0) 100%);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+            border-radius: 999px;
+        }
+
+        /* Form Controls */
+        select, input[type="checkbox"], input[type="text"], input[type="tel"], textarea {
+            accent-color: #dc2626;
+        }
+
+        /* Subtle Ambient Glow */
+        .crimson-ambient {
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.14) 0%, rgba(9, 9, 11, 0) 70%);
+        }
     </style>
 </head>
 <body class="selection:bg-crimson selection:text-white">
 
-    <!-- HEADER -->
+    <!-- STICKY NAVIGATION HEADER -->
     <header class="sticky top-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
-            
-            <!-- CSS Logo -->
-            <a href="#" class="flex flex-col items-start leading-none tracking-tighter cursor-pointer no-underline group hover:opacity-90 transition-opacity">
-                <div class="text-3xl sm:text-4xl font-black flex items-baseline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#ffffff] via-[#d4d4d8] to-[#71717a]">KAO</span>
-                    <span class="text-crimson">Z</span>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <!-- Pure CSS 3D Metallic Logo (No Car) -->
+            <a href="#" class="kaoz-logo-wrap group py-1" aria-label="Kaoz Detailing Home">
+                <div class="kaoz-logo-main text-2xl sm:text-3xl">
+                    <span class="kaoz-chrome">KAO</span><span class="kaoz-crimson-z">Z</span>
                 </div>
-                <div class="text-[8px] sm:text-[10px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d4d4d8] to-[#a1a1aa] tracking-[0.45em] uppercase mt-0.5 w-full pl-0.5">
-                    DETAILING
-                </div>
+                <div class="kaoz-logo-sub text-[8px] sm:text-[9px]">DETAILING</div>
+                <div class="kaoz-logo-blade"></div>
             </a>
 
-            <div class="flex items-center gap-4">
-                <a href="#calculator" class="hidden sm:flex items-center gap-2 text-sm font-semibold text-white hover:text-crimson transition-colors">
-                    <i class="fa-solid fa-calculator text-crimson"></i> Estimate
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-widest text-textMuted">
+                <a href="#packages" class="hover:text-white transition-colors">Packages</a>
+                <a href="#addons" class="hover:text-white transition-colors">Add-Ons</a>
+                <a href="#calculator" class="hover:text-white transition-colors">Quote Calculator</a>
+                <a href="#vip" class="hover:text-white transition-colors">VIP Memberships</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Action CTAs -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <a href="#calculator" class="px-3.5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/15 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all">
+                    Instant Quote
                 </a>
-                <a href="sms:18434505051" class="px-5 py-2.5 bg-crimson hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-colors shadow-[0_0_15px_rgba(230,0,0,0.3)]">
-                    Text Us
+                <a href="sms:18434505051" class="px-4 py-2.5 bg-crimson hover:bg-crimsonDark text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-[0_0_15px_rgba(220,38,38,0.35)] flex items-center gap-1.5">
+                    <i class="fa-solid fa-comment-sms"></i>
+                    <span>Text Us</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="relative pt-24 pb-20 px-5 border-b border-white/5 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-crimson/10 rounded-full blur-[150px] pointer-events-none"></div>
+    <!-- HERO SECTION -->
+    <section class="relative pt-16 pb-20 sm:pt-24 sm:pb-28 px-4 sm:px-6 border-b border-white/10 overflow-hidden">
+        <div class="absolute inset-0 crimson-ambient pointer-events-none"></div>
         
-        <div class="max-w-4xl mx-auto relative z-10 fade-in text-center sm:text-left flex flex-col sm:items-start items-center">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-8 h-[1px] bg-crimson hidden sm:block"></div>
-                <span class="text-xs font-mono font-bold text-crimson uppercase tracking-[0.2em]">
-                    Premium Mobile Service
-                </span>
-                <div class="w-8 h-[1px] bg-crimson hidden sm:block"></div>
+        <div class="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
+            <!-- Location Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-panel border border-white/10 text-xs font-semibold text-textMuted mb-6">
+                <span class="w-2 h-2 rounded-full bg-crimson animate-pulse"></span>
+                <span>Jacksonville, FL &bull; Mobile Driveway Service</span>
             </div>
 
-            <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase mb-6 text-white">
-                KAOZ<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson to-red-500">DETAILING</span>
+            <!-- Main Hero Heading requested -->
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none mb-5 text-white uppercase">
+                KAOZ <span class="text-crimson">DETAILING</span>
             </h1>
 
-            <p class="text-lg sm:text-xl text-textMuted max-w-2xl leading-relaxed mb-4 font-medium">
-                FULL SERVICE TO YOUR DRIVEWAY. Corrected paint, reset interiors, and a finish you can read your reflection in — booked in three minutes, deposit and all.
+            <!-- Subtitle with Full Service to Your Driveway included below -->
+            <p class="text-lg sm:text-2xl text-white font-bold tracking-wide uppercase mb-3">
+                Full Service to Your Driveway
             </p>
-            <p class="text-xs font-mono text-white/50 mb-10 bg-white/5 inline-block px-3 py-1.5 rounded-sm">
-                <i class="fa-solid fa-bolt text-crimson mr-1"></i> Requires outdoor water spigot and electricity access within 75ft.
+            <p class="text-sm sm:text-base text-textMuted max-w-2xl leading-relaxed mb-8">
+                We come to your driveway and work around your busy schedule. Equipped with commercial-grade tools and premium products to restore, sanitize, and protect your vehicle inside and out.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#calculator" class="px-8 py-4 bg-crimson hover:bg-crimsonHover text-white text-center font-bold text-sm sm:text-base uppercase tracking-wide transition-colors flex items-center justify-center gap-3 rounded-sm">
-                    Build your estimate <i class="fa-solid fa-arrow-right"></i>
+            <!-- Hero CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
+                <a href="#calculator" class="w-full sm:w-auto px-8 py-4 bg-crimson hover:bg-crimsonDark text-white font-bold text-sm uppercase tracking-wider transition-all rounded-lg shadow-[0_0_25px_rgba(220,38,38,0.4)] flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Build Your Quote</span>
                 </a>
-                <a href="sms:18434505051" class="px-8 py-4 bg-panel border border-white/10 hover:border-white/20 text-white text-center font-bold text-sm sm:text-base transition-colors rounded-sm">
-                    Text (843) 450-5051
+                <a href="#vip" class="w-full sm:w-auto px-8 py-4 bg-panel hover:bg-panelLight border border-white/15 text-white font-bold text-sm uppercase tracking-wider transition-all rounded-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-crown text-crimson"></i>
+                    <span>VIP Maintenance Plans</span>
                 </a>
+            </div>
+
+            <!-- Key Driveway Highlights -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mt-12 pt-8 border-t border-white/10 w-full max-w-3xl text-xs sm:text-sm text-textMuted">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-house-chimney text-crimson"></i>
+                    <span>100% Driveway Convenience</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-tags text-crimson"></i>
+                    <span>$20 Off Per Vehicle (2+ Cars)</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-crimson"></i>
+                    <span>50% Deposit Secures Slot</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CORE PACKAGES -->
-    <section class="py-24 px-5 border-b border-white/5 relative">
+    <!-- CORE PACKAGES SECTION -->
+    <section id="packages" class="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/10 scroll-mt-16">
         <div class="max-w-6xl mx-auto">
-            <div class="mb-12 flex flex-col md:flex-row gap-6 justify-between items-end">
-                <div>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">Detailing Packages</h2>
-                    <p class="text-textMuted max-w-2xl text-sm leading-relaxed">Comprehensive solutions engineered for your vehicle's specific needs. All services are performed at your location.</p>
-                </div>
-                <!-- Promos -->
-                <div class="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-sm max-w-sm">
-                    <div class="text-emerald-400 font-bold text-sm flex items-center gap-2 mb-1">
-                        <i class="fa-solid fa-tags"></i> Multi-Car Discount
-                    </div>
-                    <p class="text-emerald-500/80 text-xs">$20 OFF each vehicle when 2 or more are booked at the same time.</p>
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="text-crimson text-xs font-bold uppercase tracking-widest block mb-2">Precision Auto Care</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight mb-4">Core Detailing Packages</h2>
+                <div class="flex flex-wrap items-center justify-center gap-2.5 mt-3">
+                    <span class="bg-crimson/15 border border-crimson/40 text-crimson text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-md">
+                        +$40 Surcharge for Large SUVs / Trucks
+                    </span>
+                    <span class="bg-white/5 border border-white/10 text-textMain text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-md">
+                        Multi-Vehicle Discount: $20 Off Each (2+ Vehicles)
+                    </span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Exterior -->
-                <div class="bg-panel border border-white/5 p-8 rounded-sm flex flex-col h-full hover:border-white/15 transition-all group">
-                    <div class="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
-                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Kaoz Exterior</h3>
-                        <div class="text-right">
-                            <span class="text-textMuted font-mono text-xs block">Approx 1-1.5 hrs</span>
-                        </div>
+                <!-- 1. Kaoz Exterior -->
+                <div class="bg-panel border border-white/10 rounded-xl p-6 flex flex-col hover:border-crimson/60 transition-all">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-black text-white uppercase">Kaoz Exterior</h3>
+                        <span class="text-xs font-semibold text-textMuted bg-white/5 px-2.5 py-1 rounded"><i class="fa-regular fa-clock mr-1"></i>~1–1.5 Hrs</span>
                     </div>
-                    <div class="text-crimson font-mono font-bold text-xl mb-6">Starting $89 <span class="text-xs text-textMuted font-sans">Sedan</span></div>
-                    <p class="text-textMuted text-sm mb-8 flex-grow leading-relaxed">
-                        Contact wash, premium paint sealant/wax for superior water beading, deep tire shine, and door jamb cleaning.
+                    <div class="mb-4">
+                        <span class="text-3xl font-black text-crimson">$89</span>
+                        <span class="text-xs text-textMuted font-medium block mt-0.5">Small / Sedan &bull; $129 Large SUV/Truck</span>
+                    </div>
+                    <p class="text-xs text-textMuted mb-5 leading-relaxed">
+                        Thorough exterior decontamination wash and high-gloss protective finish.
                     </p>
-                    <a href="#calculator" onclick="selectPackage('exterior')" class="text-white text-sm font-bold uppercase tracking-wider group-hover:text-crimson transition-colors flex items-center gap-2 mt-auto">Select <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <ul class="text-sm text-textMain space-y-2.5 mb-6 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Pre-rinse &amp; snow foam bath</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Scratch-free hand contact wash</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Deep wheel face, barrel &amp; tire cleaning</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Door jambs wiped &amp; cleaned</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Spray wax / paint sealant protection</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Streak-free exterior glass &amp; tire dressing</span></li>
+                    </ul>
+                    <button onclick="selectPackageInCalc('exterior')" class="w-full py-3 bg-white/5 hover:bg-crimson text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/10 hover:border-crimson transition-all">
+                        Select in Calculator
+                    </button>
                 </div>
 
-                <!-- Interior -->
-                <div class="bg-panel border border-white/5 p-8 rounded-sm flex flex-col h-full hover:border-white/15 transition-all group">
-                    <div class="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
-                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Kaoz Interior</h3>
-                        <div class="text-right">
-                            <span class="text-textMuted font-mono text-xs block">Approx 1.5-3 hrs</span>
-                        </div>
+                <!-- 2. Kaoz Interior -->
+                <div class="bg-panel border border-white/10 rounded-xl p-6 flex flex-col hover:border-crimson/60 transition-all">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-black text-white uppercase">Kaoz Interior</h3>
+                        <span class="text-xs font-semibold text-textMuted bg-white/5 px-2.5 py-1 rounded"><i class="fa-regular fa-clock mr-1"></i>~1.5–2 Hrs</span>
                     </div>
-                    <div class="text-crimson font-mono font-bold text-xl mb-6">Starting $129 <span class="text-xs text-textMuted font-sans">Sedan</span></div>
-                    <p class="text-textMuted text-sm mb-4 leading-relaxed">
-                        Full vacuum including trunk, surface dust removal, UV protection for plastics, seat surface cleaning, dashboard, dressing, interior window cleaning, and door jambs.
+                    <div class="mb-4">
+                        <span class="text-3xl font-black text-crimson">$129</span>
+                        <span class="text-xs text-textMuted font-medium block mt-0.5">Small / Sedan &bull; $169 Large SUV/Truck</span>
+                    </div>
+                    <p class="text-xs text-textMuted mb-5 leading-relaxed">
+                        Comprehensive cabin refresh, high-pressure air purge, and UV surface protection.
                     </p>
-                    <div class="bg-black/50 border border-white/5 p-3 rounded-sm mt-auto mb-8">
-                        <p class="text-[11px] text-textMuted leading-tight font-mono">
-                            <i class="fa-solid fa-circle-exclamation text-crimson"></i> Please remove all personal items prior to service; areas with personal items will be bypassed.
-                        </p>
-                    </div>
-                    <a href="#calculator" onclick="selectPackage('interior')" class="text-white text-sm font-bold uppercase tracking-wider group-hover:text-crimson transition-colors flex items-center gap-2 mt-auto">Select <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <ul class="text-sm text-textMain space-y-2.5 mb-6 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Compressed-air crevice &amp; vent blowout</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Full interior &amp; trunk vacuuming</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Dash, console, door panels &amp; cupholders sanitized</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Floor mats scrubbed &amp; refreshed</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Non-greasy UV protectant on plastics</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Streak-free interior glass &amp; mirrors</span></li>
+                    </ul>
+                    <button onclick="selectPackageInCalc('interior')" class="w-full py-3 bg-white/5 hover:bg-crimson text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/10 hover:border-crimson transition-all">
+                        Select in Calculator
+                    </button>
                 </div>
 
-                <!-- Full -->
-                <div class="bg-panel border border-white/5 p-8 rounded-sm flex flex-col h-full hover:border-white/15 transition-all group lg:col-span-1 md:col-span-2">
-                    <div class="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
-                        <h3 class="text-2xl font-black text-white uppercase tracking-tight">Kaoz Full</h3>
-                        <div class="text-right">
-                            <span class="text-textMuted font-mono text-xs block">Approx 2-4 hrs</span>
-                        </div>
+                <!-- 3. Kaoz Full -->
+                <div class="bg-panel border-2 border-crimson/70 rounded-xl p-6 flex flex-col relative shadow-[0_0_25px_rgba(220,38,38,0.12)]">
+                    <div class="absolute -top-3 left-6 bg-crimson text-white text-[10px] font-extrabold uppercase tracking-widest py-1 px-3 rounded">
+                        Most Popular
                     </div>
-                    <div class="text-crimson font-mono font-bold text-xl mb-6">Starting $219 <span class="text-xs text-textMuted font-sans">Sedan</span></div>
-                    <p class="text-textMuted text-sm mb-8 flex-grow leading-relaxed">
-                        The complete package combining both Interior and Exterior services into a single, comprehensive appointment for a total vehicle refresh.
+                    <div class="flex justify-between items-start mb-2 mt-1">
+                        <h3 class="text-xl font-black text-white uppercase">Kaoz Full</h3>
+                        <span class="text-xs font-semibold text-textMuted bg-white/5 px-2.5 py-1 rounded"><i class="fa-regular fa-clock mr-1"></i>~2.5–3 Hrs</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-3xl font-black text-crimson">$219</span>
+                        <span class="text-xs text-textMuted font-medium block mt-0.5">Small / Sedan &bull; $259 Large SUV/Truck</span>
+                    </div>
+                    <p class="text-xs text-textMuted mb-5 leading-relaxed">
+                        Complete bumper-to-bumper interior and exterior detail for a showroom finish.
                     </p>
-                    <a href="#calculator" onclick="selectPackage('full')" class="text-white text-sm font-bold uppercase tracking-wider group-hover:text-crimson transition-colors flex items-center gap-2 mt-auto">Select <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <ul class="text-sm text-textMain space-y-2.5 mb-6 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>Everything in Kaoz Exterior</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>Everything in Kaoz Interior</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Complete inside &amp; out sanitization</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Qualifies vehicle for any VIP Membership tier</span></li>
+                    </ul>
+                    <button onclick="selectPackageInCalc('full')" class="w-full py-3 bg-crimson hover:bg-crimsonDark text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md">
+                        Select in Calculator
+                    </button>
                 </div>
 
-                <!-- Reset (Featured) -->
-                <div class="bg-gradient-to-br from-panel to-[#1a0505] border border-crimson/30 p-8 rounded-sm flex flex-col h-full shadow-[0_0_30px_rgba(230,0,0,0.05)] md:col-span-2 lg:col-span-3 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 bg-crimson text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-6 shadow-md">Ultimate Interior</div>
-                    
-                    <div class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
-                        <div class="flex-1">
-                            <div class="flex justify-between items-start mb-4">
-                                <h3 class="text-3xl font-black text-white uppercase tracking-tight">Kaoz Reset</h3>
-                                <span class="text-textMuted font-mono text-sm block">3+ hours</span>
+                <!-- 4. Kaoz Reset -->
+                <div class="bg-gradient-to-b from-panel to-[#1f0909] border border-crimson/50 rounded-xl p-6 flex flex-col relative">
+                    <div class="absolute -top-3 left-6 bg-white text-obsidian text-[10px] font-extrabold uppercase tracking-widest py-1 px-3 rounded">
+                        Deep Restoration
+                    </div>
+                    <div class="flex justify-between items-start mb-2 mt-1">
+                        <h3 class="text-xl font-black text-white uppercase">Kaoz Reset</h3>
+                        <span class="text-xs font-bold text-crimson bg-crimson/15 px-2.5 py-1 rounded"><i class="fa-regular fa-clock mr-1"></i>3+ Hours</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-3xl font-black text-crimson">$349</span>
+                        <span class="text-xs text-textMuted font-medium block mt-0.5">Small / Sedan &bull; $389 Large SUV/Truck</span>
+                    </div>
+                    <p class="text-xs text-textMuted mb-5 leading-relaxed">
+                        Intensive interior restoration for heavily soiled cabins, stains, spills, and buildup.
+                    </p>
+                    <ul class="text-sm text-textMain space-y-2.5 mb-6 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>Full Kaoz Interior package included</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>Heated Seat &amp; Carpet Shampoo Extraction</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>High-temperature steam sanitization</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>Leather deep scrub &amp; conditioning</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span><strong>Headliner spot treatment &amp; odor neutralizer</strong></span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-plus text-crimson mt-1 text-xs"></i><span class="text-textMuted"><em>Optional: Add Kaoz Exterior in calculator</em></span></li>
+                    </ul>
+                    <button onclick="selectPackageInCalc('reset')" class="w-full py-3 bg-white/10 hover:bg-crimson text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/15 hover:border-crimson transition-all">
+                        Select in Calculator
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Professional Condition Disclaimer -->
+            <p class="text-center text-xs text-textMuted mt-8 max-w-3xl mx-auto">
+                <i class="fa-solid fa-circle-info text-crimson mr-1"></i>
+                <strong>Vehicle Condition Note:</strong> Listed package rates reflect standard vehicle conditions. Vehicles exhibiting severe soil, excessive pet hair, mold, or biohazards outside package scope may require an additional restoration fee confirmed during your pre-service inspection.
+            </p>
+        </div>
+    </section>
+
+    <!-- DEDICATED ADD-ONS MENU SECTION (EXTERIOR & INTERIOR, SORTED HIGH TO LOW) -->
+    <section id="addons" class="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/10 scroll-mt-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="text-crimson text-xs font-bold uppercase tracking-widest block mb-2">Custom Enhancements</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight mb-3">Specialty Add-Ons &amp; Protection</h2>
+                <p class="text-textMuted text-sm max-w-2xl mx-auto">
+                    Tailor your detail with targeted exterior and interior treatments. All add-ons can be selected directly inside our Interactive Quote Calculator below.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- 1. EXTERIOR ADD-ONS (Sorted High to Low) -->
+                <div class="bg-panel border border-white/10 rounded-2xl p-6 sm:p-8">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-lg bg-crimson/15 border border-crimson/40 flex items-center justify-center text-crimson">
+                                <i class="fa-solid fa-car-side"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-black text-white uppercase tracking-wide">Exterior Add-Ons</h3>
+                                <span class="text-[11px] text-textMuted uppercase tracking-wider">Sorted Highest to Lowest</span>
                             </div>
-                            <div class="text-crimson font-mono font-bold text-2xl mb-4">
-                                Starting $349 <span class="text-sm text-textMuted font-sans">Sedan</span>
-                            </div>
-                            <p class="text-textMuted text-sm leading-relaxed mb-4">
-                                The ultimate interior deep clean. Includes everything in the Kaoz Interior package <strong>PLUS:</strong>
-                            </p>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm text-white/90 mb-6">
-                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Seat & Carpet Shampoo/Extraction</li>
-                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Headliner Cleaning</li>
-                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Steam Cleaning</li>
-                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Leather Conditioner</li>
-                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Interior Ceramic Protectant</li>
-                                <li><i class="fa-solid fa-check text-crimson mr-2 text-xs"></i> Rubber Floor Mat Deep Clean</li>
-                            </ul>
-                            <p class="text-xs text-textMuted font-mono italic">* Exterior wash available as an add-on during estimate building.</p>
                         </div>
-                        <div class="lg:w-48 shrink-0 flex flex-col justify-end h-full w-full">
-                            <a href="#calculator" onclick="selectPackage('reset')" class="w-full py-4 bg-crimson hover:bg-crimsonHover text-white text-center text-sm font-bold uppercase tracking-wider transition-colors rounded-sm shadow-lg">
-                                Build Estimate
-                            </a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Conditional Kaoz Exterior Add-on for Reset -->
+                        <div class="p-4 rounded-xl bg-crimson/10 border border-crimson/40 flex justify-between items-start gap-4">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-1">
+                                    <h4 class="text-sm font-bold text-white uppercase">Kaoz Exterior Detail</h4>
+                                    <span class="text-[10px] font-extrabold uppercase tracking-wider bg-crimson text-white px-2 py-0.5 rounded">Kaoz Reset Add-On</span>
+                                </div>
+                                <p class="text-xs text-textMuted leading-relaxed">Full exterior hand wash, wheel &amp; tire detail, and hydrophobic sealant. (+$40 for Large SUV/Truck).</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-lg font-black text-crimson">$89</span>
+                            </div>
+                        </div>
+
+                        <!-- Engine Bay Detailing -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Engine Bay Detailing</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Thorough degreasing, low-pressure rinse, and satin protective dressing.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-base font-black text-crimson">$79</span>
+                            </div>
+                        </div>
+
+                        <!-- Trim Restoration -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Trim Restoration</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Restores faded exterior plastic and vinyl trim to a deep, UV-protected factory finish.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Ceramic Glass Protection -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Ceramic Glass Protection</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Hydrophobic windshield and window coating for superior wet-weather visibility.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Ceramic Rim & Tire Protection -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Ceramic Rim &amp; Tire Protection</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">High-temp wheel sealant and durable tire coating to repel brake dust and road grime.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. INTERIOR ADD-ONS (Sorted High to Low) -->
+                <div class="bg-panel border border-white/10 rounded-2xl p-6 sm:p-8">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-lg bg-crimson/15 border border-crimson/40 flex items-center justify-center text-crimson">
+                                <i class="fa-solid fa-spray-can-sparkles"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-black text-white uppercase tracking-wide">Interior Add-Ons</h3>
+                                <span class="text-[11px] text-textMuted uppercase tracking-wider">Sorted Highest to Lowest</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3.5">
+                        <!-- Odor Elimination Treatment -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Odor Elimination Treatment</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Pricing varies based on severity, from light cabin odors to heavy smoke or biohazard remediation.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-base font-black text-crimson">$69</span>
+                            </div>
+                        </div>
+
+                        <!-- Seat Shampoo & Extraction -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">Seat Shampoo &amp; Extraction</h4>
+                                    <span class="text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">Included in Reset</span>
+                                </div>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Deep heated extraction for fabric upholstery; final pricing varies by stain severity and condition.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Carpet Shampoo & Extraction -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">Carpet Shampoo &amp; Extraction</h4>
+                                    <span class="text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">Included in Reset</span>
+                                </div>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Deep heated carpet extraction; final pricing varies by stain severity and condition.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Heavy Pet Hair Removal -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Heavy Pet Hair Removal</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Specialized mechanical extraction of embedded pet hair from carpets and upholstery.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Headliner Deep Cleaning -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Headliner Deep Cleaning</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Gentle, low-moisture treatment to safely lift stains without compromising headliner adhesive.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-[10px] uppercase font-bold text-textMuted block">Starting At</span>
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Ceramic Leather Protection -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Ceramic Leather Protection</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Durable hydrophobic barrier shielding leather from spills, UV fading, and dye transfer.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Ceramic Interior Protection -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Ceramic Interior Protection</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">UV and stain-resistant protective coating for interior dashboards, door panels, and trim.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$49</span>
+                            </div>
+                        </div>
+
+                        <!-- Steam Cleaning Service -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">Steam Cleaning Service</h4>
+                                    <span class="text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">Included in Reset</span>
+                                </div>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">High-temperature steam sanitization for air vents, cupholders, crevices, and high-touch surfaces.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$29</span>
+                            </div>
+                        </div>
+
+                        <!-- Leather Conditioner -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">Leather Conditioner</h4>
+                                    <span class="text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">Included in Reset</span>
+                                </div>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">pH-balanced nourishment to restore softness and prevent cracking on leather seats.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$29</span>
+                            </div>
+                        </div>
+
+                        <!-- Child Seat Deep Cleaning -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Child Seat Deep Cleaning</h4>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Full steam sanitization and fabric extraction for child safety seats.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$29</span>
+                            </div>
+                        </div>
+
+                        <!-- Rubber Floor Mats Deep Cleaning -->
+                        <div class="p-3.5 rounded-xl bg-obsidian/70 border border-white/5 flex justify-between items-start gap-4">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">Rubber Floor Mats Deep Cleaning</h4>
+                                    <span class="text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded">Included in Reset</span>
+                                </div>
+                                <p class="text-xs text-textMuted leading-relaxed mt-0.5">Heavy-duty scrubbing, extraction, and non-slip factory finish restoration.</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-base font-black text-crimson">$19</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -249,466 +625,749 @@
         </div>
     </section>
 
-    <!-- VIP MEMBERSHIPS -->
-    <section class="py-24 px-5 bg-panel/30 border-b border-white/5">
+    <!-- INTERACTIVE QUOTE CALCULATOR SECTION -->
+    <section id="calculator" class="py-20 sm:py-24 px-4 sm:px-6 bg-panel/40 border-b border-white/10 scroll-mt-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-crimson text-xs font-bold uppercase tracking-widest block mb-2">Transparent Pricing</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight mb-3">Interactive Quote Calculator</h2>
+                <p class="text-textMuted text-sm max-w-xl mx-auto">
+                    Customize your package below. Add-ons already included in your selected package are automatically locked to prevent duplicate charges.
+                </p>
+            </div>
+
+            <div class="bg-panel border border-white/10 rounded-2xl p-5 sm:p-8 shadow-2xl">
+                
+                <!-- Step 1: Core Selections -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+                    <!-- Package Selector -->
+                    <div>
+                        <label for="calc-package" class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">
+                            1. Select Package
+                        </label>
+                        <select id="calc-package" onchange="calculateQuote()" class="w-full bg-obsidian border border-white/15 p-3.5 text-sm text-white font-semibold rounded-lg focus:border-crimson focus:outline-none transition-colors">
+                            <option value="exterior">Kaoz Exterior ($89 Base)</option>
+                            <option value="interior">Kaoz Interior ($129 Base)</option>
+                            <option value="full" selected>Kaoz Full ($219 Base)</option>
+                            <option value="reset">Kaoz Reset ($349 Base)</option>
+                        </select>
+                    </div>
+
+                    <!-- Vehicle Size Selector -->
+                    <div>
+                        <label for="calc-size" class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">
+                            2. Vehicle Size
+                        </label>
+                        <select id="calc-size" onchange="calculateQuote()" class="w-full bg-obsidian border border-white/15 p-3.5 text-sm text-white font-semibold rounded-lg focus:border-crimson focus:outline-none transition-colors">
+                            <option value="0">Small / Sedan / Coupe (+$0)</option>
+                            <option value="40">Large SUV / Truck / Van (+$40)</option>
+                        </select>
+                    </div>
+
+                    <!-- Number of Vehicles (Multi-Vehicle Discount) -->
+                    <div>
+                        <label for="calc-qty" class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">
+                            3. Number of Vehicles
+                        </label>
+                        <select id="calc-qty" onchange="calculateQuote()" class="w-full bg-obsidian border border-white/15 p-3.5 text-sm text-white font-semibold rounded-lg focus:border-crimson focus:outline-none transition-colors">
+                            <option value="1">1 Vehicle (Standard Rate)</option>
+                            <option value="2">2 Vehicles ($20 Off Each / -$40)</option>
+                            <option value="3">3 Vehicles ($20 Off Each / -$60)</option>
+                            <option value="4">4 Vehicles ($20 Off Each / -$80)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Step 4: Exterior & Interior Add-Ons Sorted High-to-Low with Smart Package Lockouts -->
+                <div class="mb-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider">
+                            4. Select Optional Add-Ons (Organized Exterior &amp; Interior, High to Low)
+                        </label>
+                        <span id="included-lockout-hint" class="hidden text-xs font-semibold text-emerald-400">
+                            <i class="fa-solid fa-check-double mr-1"></i> Kaoz Reset included items locked automatically
+                        </span>
+                    </div>
+
+                    <!-- EXTERIOR ADD-ONS GROUP (Sorted High to Low) -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-2 mb-3 pb-1.5 border-b border-white/10">
+                            <i class="fa-solid fa-car-side text-crimson text-xs"></i>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-white">Exterior Add-Ons (High to Low)</span>
+                        </div>
+
+                        <!-- Conditional Add-On: ONLY appears when 'Kaoz Reset' package is selected ($89 Base / +$40 Large SUV/Truck) -->
+                        <div id="reset-exterior-container" class="hidden mb-3 p-4 rounded-xl bg-crimson/10 border border-crimson/50 transition-all">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-[10px] font-extrabold uppercase tracking-widest text-crimson">
+                                    <i class="fa-solid fa-sparkles mr-1"></i> Kaoz Reset Exclusive Exterior Upgrade
+                                </span>
+                                <span class="text-[11px] text-textMuted">Starting at $89 (+$40 Large SUV/Truck)</span>
+                            </div>
+                            <label class="flex items-start gap-3 cursor-pointer mt-1.5">
+                                <input type="checkbox" id="addon-reset-exterior" onchange="calculateQuote()" class="w-4 h-4 mt-1 rounded">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-bold block">Kaoz Exterior Detail</span>
+                                    <span class="block text-xs text-textMuted">Full exterior hand wash, wheel &amp; tire detail, and hydrophobic sealant.</span>
+                                </div>
+                                <span id="reset-exterior-price-badge" class="text-crimson font-black text-sm shrink-0">+$89</span>
+                            </label>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- Exterior 1: Engine Bay Detailing (Starting at $79) -->
+                            <label id="wrap-addon-engine" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-engine" value="79" data-label="Engine Bay Detailing" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Engine Bay Detailing</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Thorough degreasing, low-pressure rinse, and satin protective dressing.</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="text-[9px] uppercase text-textMuted block">Starting</span>
+                                    <span id="badge-addon-engine" class="text-crimson font-bold text-sm">+$79</span>
+                                </div>
+                            </label>
+
+                            <!-- Exterior 2: Trim Restoration ($49) -->
+                            <label id="wrap-addon-trim" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-trim" value="49" data-label="Trim Restoration" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Trim Restoration</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Restores faded exterior plastic and vinyl trim to a deep, UV-protected factory finish.</span>
+                                </div>
+                                <span id="badge-addon-trim" class="text-crimson font-bold text-sm shrink-0">+$49</span>
+                            </label>
+
+                            <!-- Exterior 3: Ceramic Glass Protection ($49) -->
+                            <label id="wrap-addon-glass" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-glass" value="49" data-label="Ceramic Glass Protection" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Ceramic Glass Protection</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Hydrophobic windshield and window coating for superior wet-weather visibility.</span>
+                                </div>
+                                <span id="badge-addon-glass" class="text-crimson font-bold text-sm shrink-0">+$49</span>
+                            </label>
+
+                            <!-- Exterior 4: Ceramic Rim & Tire Protection ($49) -->
+                            <label id="wrap-addon-rim" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-rim" value="49" data-label="Ceramic Rim & Tire Protection" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Ceramic Rim &amp; Tire Protection</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">High-temp wheel sealant and durable tire coating to repel brake dust and road grime.</span>
+                                </div>
+                                <span id="badge-addon-rim" class="text-crimson font-bold text-sm shrink-0">+$49</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- INTERIOR ADD-ONS GROUP (Sorted High to Low) -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 pb-1.5 border-b border-white/10">
+                            <i class="fa-solid fa-spray-can-sparkles text-crimson text-xs"></i>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-white">Interior Add-Ons (High to Low)</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- Interior 1: Odor Elimination Treatment (Starting at $69) -->
+                            <label id="wrap-addon-odor" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-odor" value="69" data-label="Odor Elimination Treatment" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Odor Elimination Treatment</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Pricing varies based on severity, from light cabin odors to heavy smoke or biohazard remediation.</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span id="start-addon-odor" class="text-[9px] uppercase text-textMuted block">Starting</span>
+                                    <span id="badge-addon-odor" class="text-crimson font-bold text-sm">+$69</span>
+                                </div>
+                            </label>
+
+                            <!-- Interior 2: Seat Shampoo & Extraction (Starting at $49 - Included in Reset) -->
+                            <label id="wrap-addon-seats" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-seats" value="49" data-label="Seat Shampoo & Extraction" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Seat Shampoo &amp; Extraction</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Deep heated extraction for fabric upholstery; final pricing varies by stain severity and condition.</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span id="start-addon-seats" class="text-[9px] uppercase text-textMuted block">Starting</span>
+                                    <span id="badge-addon-seats" class="text-crimson font-bold text-sm">+$49</span>
+                                </div>
+                            </label>
+
+                            <!-- Interior 3: Carpet Shampoo & Extraction (Starting at $49 - Included in Reset) -->
+                            <label id="wrap-addon-carpets" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-carpets" value="49" data-label="Carpet Shampoo & Extraction" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Carpet Shampoo &amp; Extraction</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Deep heated carpet extraction; final pricing varies by stain severity and condition.</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span id="start-addon-carpets" class="text-[9px] uppercase text-textMuted block">Starting</span>
+                                    <span id="badge-addon-carpets" class="text-crimson font-bold text-sm">+$49</span>
+                                </div>
+                            </label>
+
+                            <!-- Interior 4: Heavy Pet Hair Removal (Starting at $49) -->
+                            <label id="wrap-addon-pethair" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-pethair" value="49" data-label="Heavy Pet Hair Removal" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Heavy Pet Hair Removal</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Specialized mechanical extraction of embedded pet hair from carpets and upholstery.</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="text-[9px] uppercase text-textMuted block">Starting</span>
+                                    <span id="badge-addon-pethair" class="text-crimson font-bold text-sm">+$49</span>
+                                </div>
+                            </label>
+
+                            <!-- Interior 5: Headliner Deep Cleaning (Starting at $49) -->
+                            <label id="wrap-addon-headliner" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-headliner" value="49" data-label="Headliner Deep Cleaning" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Headliner Deep Cleaning</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Gentle, low-moisture treatment to safely lift stains without compromising headliner adhesive.</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="text-[9px] uppercase text-textMuted block">Starting</span>
+                                    <span id="badge-addon-headliner" class="text-crimson font-bold text-sm">+$49</span>
+                                </div>
+                            </label>
+
+                            <!-- Interior 6: Ceramic Leather Protection ($49) -->
+                            <label id="wrap-addon-ceramicleather" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-ceramicleather" value="49" data-label="Ceramic Leather Protection" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Ceramic Leather Protection</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Durable hydrophobic barrier shielding leather from spills, UV fading, and dye transfer.</span>
+                                </div>
+                                <span id="badge-addon-ceramicleather" class="text-crimson font-bold text-sm shrink-0">+$49</span>
+                            </label>
+
+                            <!-- Interior 7: Ceramic Interior Protection ($49) -->
+                            <label id="wrap-addon-ceramicinterior" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-ceramicinterior" value="49" data-label="Ceramic Interior Protection" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Ceramic Interior Protection</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">UV and stain-resistant protective coating for interior dashboards, door panels, and trim.</span>
+                                </div>
+                                <span id="badge-addon-ceramicinterior" class="text-crimson font-bold text-sm shrink-0">+$49</span>
+                            </label>
+
+                            <!-- Interior 8: Steam Cleaning Service ($29 - Included in Reset) -->
+                            <label id="wrap-addon-steam" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-steam" value="29" data-label="Steam Cleaning Service" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Steam Cleaning Service</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">High-temperature steam sanitization for air vents, cupholders, crevices, and high-touch surfaces.</span>
+                                </div>
+                                <span id="badge-addon-steam" class="text-crimson font-bold text-sm shrink-0">+$29</span>
+                            </label>
+
+                            <!-- Interior 9: Leather Conditioner ($29 - Included in Reset) -->
+                            <label id="wrap-addon-leather" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-leather" value="29" data-label="Leather Conditioner" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Leather Conditioner</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">pH-balanced nourishment to restore softness and prevent cracking on leather seats.</span>
+                                </div>
+                                <span id="badge-addon-leather" class="text-crimson font-bold text-sm shrink-0">+$29</span>
+                            </label>
+
+                            <!-- Interior 10: Child Seat Deep Cleaning ($29) -->
+                            <label id="wrap-addon-childseat" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-childseat" value="29" data-label="Child Seat Deep Cleaning" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Child Seat Deep Cleaning</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Full steam sanitization and fabric extraction for child safety seats.</span>
+                                </div>
+                                <span id="badge-addon-childseat" class="text-crimson font-bold text-sm shrink-0">+$29</span>
+                            </label>
+
+                            <!-- Interior 11: Rubber Floor Mats Deep Cleaning ($19 - Included in Reset) -->
+                            <label id="wrap-addon-mats" class="flex items-start gap-3 p-3.5 border border-white/10 rounded-xl bg-obsidian hover:border-crimson/50 transition-all cursor-pointer">
+                                <input type="checkbox" id="addon-mats" value="19" data-label="Rubber Floor Mats Deep Cleaning" onchange="calculateQuote()" class="w-4 h-4 mt-1">
+                                <div class="flex-grow">
+                                    <span class="text-sm text-white font-semibold block">Rubber Floor Mats Deep Cleaning</span>
+                                    <span class="text-[11px] text-textMuted block leading-snug">Heavy-duty scrubbing, extraction, and non-slip factory finish restoration.</span>
+                                </div>
+                                <span id="badge-addon-mats" class="text-crimson font-bold text-sm shrink-0">+$19</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote Breakdown Box -->
+                <div class="bg-obsidian border border-white/10 rounded-xl p-5 sm:p-6 mb-6">
+                    <div class="space-y-2.5 text-sm border-b border-white/10 pb-4 mb-4">
+                        <div class="flex justify-between text-textMuted">
+                            <span id="summary-pkg-line">Kaoz Full (Small / Sedan)</span>
+                            <span id="summary-pkg-price" class="text-white font-semibold">$219.00</span>
+                        </div>
+                        <div id="summary-addons-row" class="hidden flex justify-between text-textMuted">
+                            <span id="summary-addons-list">Selected Add-ons</span>
+                            <span id="summary-addons-price" class="text-white font-semibold">+$0.00</span>
+                        </div>
+                        <div id="summary-discount-row" class="hidden flex justify-between text-emerald-400 font-semibold">
+                            <span id="summary-discount-label">Multi-Vehicle Discount ($20 Off Each)</span>
+                            <span id="summary-discount-amount">-$40.00</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs uppercase font-bold tracking-wider text-textMuted block">Estimated Total</span>
+                            <span id="display-total" class="text-3xl sm:text-4xl font-black text-white">$219.00</span>
+                            <span class="text-[11px] text-textMuted block mt-0.5">Remaining 50% balance due upon completion</span>
+                        </div>
+
+                        <div class="sm:text-right bg-crimson/10 border border-crimson/40 rounded-lg px-4 py-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-crimson block">Required 50% Deposit Today</span>
+                            <div class="flex items-center sm:justify-end gap-2">
+                                <span id="display-deposit" class="text-2xl sm:text-3xl font-black text-white">$109.50</span>
+                                <button type="button" onclick="copyDepositAmount()" class="text-xs bg-white/10 hover:bg-white/20 text-white px-2.5 py-1 rounded transition-colors" title="Copy Deposit Amount">
+                                    <i class="fa-regular fa-copy mr-1"></i><span id="copy-btn-text">Copy</span>
+                                </button>
+                            </div>
+                            <span class="text-[11px] text-textMuted block mt-0.5">Enter this exact amount on the Square checkout page</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary Action Buttons: SMS Quote + Square 50% Deposit Link -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a id="sms-quote-btn" href="sms:18434505051" class="w-full py-4 px-5 bg-white hover:bg-gray-200 text-obsidian font-extrabold text-sm uppercase tracking-wider rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-center">
+                        <i class="fa-solid fa-comment-sms text-lg"></i>
+                        <span>1. Text Quote to Book</span>
+                    </a>
+
+                    <a href="https://square.link/u/P4jxiQOm?src=sheet" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-5 bg-crimson hover:bg-crimsonDark text-white font-extrabold text-sm uppercase tracking-wider rounded-xl transition-all shadow-[0_0_25px_rgba(220,38,38,0.35)] flex items-center justify-center gap-2 text-center">
+                        <i class="fa-solid fa-credit-card text-lg"></i>
+                        <span>2. Pay 50% Deposit (<span id="btn-deposit-amt">$109.50</span>)</span>
+                    </a>
+                </div>
+
+                <p class="text-center text-xs text-textMuted mt-4">
+                    <i class="fa-solid fa-lock text-crimson mr-1"></i>
+                    Secure online payment powered by <strong>Square</strong>. After texting your quote to confirm your time slot, click <strong>Pay 50% Deposit</strong> and enter your calculated deposit amount (<span id="note-deposit-amt" class="text-white font-bold">$109.50</span>).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP MAINTENANCE MEMBERSHIPS SECTION -->
+    <section id="vip" class="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/10 scroll-mt-16">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">VIP Maintenance</h2>
+            <div class="text-center mb-14">
+                <span class="text-crimson text-xs font-bold uppercase tracking-widest block mb-2">Year-Round Perfection</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight mb-3">VIP Maintenance Program</h2>
                 <p class="text-textMuted max-w-2xl mx-auto text-sm leading-relaxed">
-                    Keep your vehicle pristine year-round with our locked-in recurring plans.
+                    Keep your vehicle spotless every single month at locked-in member pricing. <strong>Firm flat rate regardless of vehicle size</strong>—no SUV or truck surcharges. Includes <strong>1 monthly maintenance detail</strong> plus <strong>1 FREE detail during your birthday month</strong>.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:px-12 mb-10">
-                <div class="bg-panel border border-white/10 p-8 rounded-sm text-center hover:-translate-y-1 transition-transform">
-                    <h3 class="font-black text-white text-xl uppercase mb-2">Exterior VIP</h3>
-                    <div class="text-crimson font-mono font-bold text-3xl mb-4">$69<span class="text-sm text-textMuted font-sans">/mo</span></div>
-                    <p class="text-textMuted text-sm">Monthly upkeep of exterior gloss, paint protection, and wheel clarity.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                
+                <!-- Tier 1: Kaoz Exterior VIP -->
+                <div class="bg-panel border border-white/10 rounded-xl p-7 flex flex-col hover:border-crimson/60 transition-all">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-textMuted">Monthly Exterior Care</span>
+                        <h3 class="text-2xl font-black text-white uppercase mt-1">Kaoz Exterior VIP</h3>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-crimson">$69</span>
+                        <span class="text-sm text-textMuted font-medium">/month &bull; Any Size Vehicle</span>
+                    </div>
+                    <ul class="text-sm text-textMain space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>1 Full Kaoz Exterior maintenance wash per month</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Continuous paint sealant &amp; gloss protection</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>1 FREE service during your birthday month</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Priority member scheduling</span></li>
+                    </ul>
+                    <a href="https://square.link/u/YBnEkLol?src=sheet" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 border border-crimson text-crimson hover:bg-crimson hover:text-white font-extrabold text-xs uppercase tracking-wider rounded-lg transition-all text-center">
+                        Join Exterior VIP ($69/mo)
+                    </a>
                 </div>
-                <div class="bg-panel border border-white/10 p-8 rounded-sm text-center hover:-translate-y-1 transition-transform">
-                    <h3 class="font-black text-white text-xl uppercase mb-2">Interior VIP</h3>
-                    <div class="text-crimson font-mono font-bold text-3xl mb-4">$89<span class="text-sm text-textMuted font-sans">/mo</span></div>
-                    <p class="text-textMuted text-sm">Monthly maintenance to keep your cabin spotless, protected, and fresh.</p>
+
+                <!-- Tier 2: Kaoz Interior VIP -->
+                <div class="bg-panel border border-white/10 rounded-xl p-7 flex flex-col hover:border-crimson/60 transition-all">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-textMuted">Monthly Cabin Care</span>
+                        <h3 class="text-2xl font-black text-white uppercase mt-1">Kaoz Interior VIP</h3>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-crimson">$89</span>
+                        <span class="text-sm text-textMuted font-medium">/month &bull; Any Size Vehicle</span>
+                    </div>
+                    <ul class="text-sm text-textMain space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>1 Full Kaoz Interior maintenance detail per month</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Cabin vacuum, air purge &amp; UV conditioning</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>1 FREE service during your birthday month</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Priority member scheduling</span></li>
+                    </ul>
+                    <a href="https://square.link/u/zIAm9yEG?src=sheet" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 border border-crimson text-crimson hover:bg-crimson hover:text-white font-extrabold text-xs uppercase tracking-wider rounded-lg transition-all text-center">
+                        Join Interior VIP ($89/mo)
+                    </a>
                 </div>
-                <div class="bg-gradient-to-b from-panel to-[#110505] border border-crimson/50 p-8 rounded-sm text-center relative hover:-translate-y-1 transition-transform shadow-[0_10px_30px_rgba(230,0,0,0.05)]">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-crimson text-white text-[10px] font-bold uppercase tracking-widest py-1 px-4 rounded-sm whitespace-nowrap">Ultimate Value</div>
-                    <h3 class="font-black text-white text-xl uppercase mb-2 mt-2">Full VIP</h3>
-                    <div class="text-crimson font-mono font-bold text-3xl mb-4">$129<span class="text-sm text-textMuted font-sans">/mo</span></div>
-                    <p class="text-textMuted text-sm">Complete inside and out monthly maintenance. Always looking freshly detailed.</p>
+
+                <!-- Tier 3: Kaoz Full VIP -->
+                <div class="bg-gradient-to-b from-panel to-[#240909] border-2 border-crimson rounded-xl p-7 flex flex-col relative shadow-[0_10px_30px_rgba(220,38,38,0.18)]">
+                    <div class="absolute -top-3 right-6 bg-crimson text-white text-[10px] font-extrabold uppercase tracking-widest py-1 px-3 rounded">
+                        Best Value
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-crimson">Complete Inside &amp; Out</span>
+                        <h3 class="text-2xl font-black text-white uppercase mt-1">Kaoz Full VIP</h3>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-crimson">$129</span>
+                        <span class="text-sm text-textMuted font-medium">/month &bull; Any Size Vehicle</span>
+                    </div>
+                    <ul class="text-sm text-textMain space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>1 Complete Kaoz Full detail (Interior + Exterior) per month</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Zero large SUV/Truck surcharge ($130/mo savings)</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>1 FREE Full detail during your birthday month</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-crimson mt-1 text-xs"></i><span>Top-priority member scheduling</span></li>
+                    </ul>
+                    <a href="https://square.link/u/VHOD3OP2?src=sheet" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-crimson hover:bg-crimsonDark text-white font-extrabold text-xs uppercase tracking-wider rounded-lg transition-all text-center shadow-lg">
+                        Join Full VIP ($129/mo)
+                    </a>
                 </div>
+
             </div>
 
-            <!-- Restored Membership Terms -->
-            <div class="bg-obsidian border border-white/5 p-6 rounded-sm max-w-4xl mx-auto shadow-inner">
-                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-crimson"></i> Membership Terms
+            <!-- Restored VIP Membership Terms Box -->
+            <div class="bg-panel border border-white/15 rounded-xl p-6 sm:p-7 max-w-4xl mx-auto">
+                <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-crimson"></i>
+                    <span>VIP Membership Terms &amp; Eligibility</span>
                 </h4>
-                <p class="text-sm text-textMuted leading-relaxed">
-                    Prices are firm regardless of vehicle size. Customers must go through an initial service of either full, exterior, or interior to opt into a membership. Going through a full detail allows sign-up for any tier. Memberships include Priority scheduling, money saving, 1 service per month (weekly or biweekly can be discussed), and <strong>1 free service during your birthday month</strong>. Vehicle must stay in normal conditions; heavy stains, heavy mud, etc., that could add hours to the job are subject to an extra charge and will be discussed with the client.
-                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-textMuted leading-relaxed">
+                    <p>
+                        <strong class="text-white">Initial Qualification:</strong> Pricing is firm regardless of vehicle size. Customers must complete an initial core service (Kaoz Full, Kaoz Interior, or Kaoz Exterior) to establish baseline vehicle condition and qualify for VIP membership rates. Completion of a Kaoz Full or Kaoz Reset detail qualifies your vehicle for any membership tier.
+                    </p>
+                    <p>
+                        <strong class="text-white">Monthly Billing &amp; Perks:</strong> Memberships include priority scheduling, 1 maintenance service per month billed automatically via Square, and 1 complimentary service during your birthday month. Vehicles must remain in normal maintenance condition; excessive mud, spills, or severe staining may incur an additional restoration charge discussed prior to service.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CALCULATOR -->
-    <section id="calculator" class="py-24 px-5 border-b border-white/5 scroll-mt-20">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">Build Your Estimate</h2>
-                <p class="text-textMuted max-w-2xl text-sm leading-relaxed">Select your vehicle size, choose a core package, and customize with add-ons. <strong>A 50% deposit is required to secure your appointment.</strong></p>
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/10 scroll-mt-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-crimson text-xs font-bold uppercase tracking-widest block mb-2">Everything You Need To Know</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">Frequently Asked Questions</h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                <!-- Left: Controls -->
-                <div class="lg:col-span-8 space-y-8">
-                    
-                    <!-- 1. Size -->
-                    <div class="bg-panel border border-white/5 p-6 sm:p-8 rounded-sm">
-                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-5 flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-crimson/20 text-crimson flex items-center justify-center text-xs">1</span> 
-                            Vehicle Size
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <label class="cursor-pointer block relative">
-                                <input type="radio" name="calc-size" value="small" class="sr-only custom-radio" checked onchange="calculateQuote()">
-                                <div class="p-5 border border-white/10 bg-obsidian transition-colors flex items-center justify-between rounded-sm h-full">
-                                    <span class="text-sm font-bold text-white uppercase tracking-wider">Sedan / Coupe</span>
-                                </div>
-                            </label>
-                            <label class="cursor-pointer block relative">
-                                <input type="radio" name="calc-size" value="large" class="sr-only custom-radio" onchange="calculateQuote()">
-                                <div class="p-5 border border-white/10 bg-obsidian transition-colors flex items-center justify-between rounded-sm h-full">
-                                    <span class="text-sm font-bold text-white uppercase tracking-wider">Large (SUV/Truck)</span>
-                                    <span class="text-xs text-crimson font-mono font-bold shrink-0 ml-2">+$40</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- 2. Package -->
-                    <div class="bg-panel border border-white/5 p-6 sm:p-8 rounded-sm">
-                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-5 flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-crimson/20 text-crimson flex items-center justify-center text-xs">2</span> 
-                            Core Package
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <label class="cursor-pointer block relative">
-                                <input type="radio" name="calc-pkg" value="exterior" class="sr-only custom-radio" checked onchange="calculateQuote()">
-                                <div class="p-5 border border-white/10 bg-obsidian transition-colors rounded-sm">
-                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1">Exterior</div>
-                                    <div class="text-xs text-textMuted font-mono">Starts $89</div>
-                                </div>
-                            </label>
-                            <label class="cursor-pointer block relative">
-                                <input type="radio" name="calc-pkg" value="interior" class="sr-only custom-radio" onchange="calculateQuote()">
-                                <div class="p-5 border border-white/10 bg-obsidian transition-colors rounded-sm">
-                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1">Interior</div>
-                                    <div class="text-xs text-textMuted font-mono">Starts $129</div>
-                                </div>
-                            </label>
-                            <label class="cursor-pointer block relative">
-                                <input type="radio" name="calc-pkg" value="full" class="sr-only custom-radio" onchange="calculateQuote()">
-                                <div class="p-5 border border-white/10 bg-obsidian transition-colors rounded-sm">
-                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1">Full Detail</div>
-                                    <div class="text-xs text-textMuted font-mono">Starts $219</div>
-                                </div>
-                            </label>
-                            <label class="cursor-pointer block relative">
-                                <input type="radio" name="calc-pkg" value="reset" class="sr-only custom-radio" onchange="calculateQuote()">
-                                <div class="p-5 border border-crimson/30 bg-gradient-to-br from-obsidian to-[#1a0505] transition-colors rounded-sm shadow-[0_0_15px_rgba(230,0,0,0.1)]">
-                                    <div class="text-sm font-bold text-white uppercase tracking-wider mb-1 flex items-center justify-between">
-                                        Reset (Deep Clean) <i class="fa-solid fa-star text-crimson text-[10px]"></i>
-                                    </div>
-                                    <div class="text-xs text-textMuted font-mono">Starts $349</div>
-                                </div>
-                            </label>
-                        </div>
-                        <div id="reset-warning" class="hidden mt-4 bg-crimson/10 border border-crimson/20 p-3 rounded-sm text-xs text-white">
-                            <i class="fa-solid fa-circle-info text-crimson mr-2"></i> <strong>Kaoz Reset Selected:</strong> Standard interior add-ons (shampoo, steam, leather, etc.) are already included in the base price and have been disabled below.
-                        </div>
-                    </div>
-
-                    <!-- 3. Add-ons -->
-                    <div class="bg-panel border border-white/5 p-6 sm:p-8 rounded-sm">
-                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-5 flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-crimson/20 text-crimson flex items-center justify-center text-xs">3</span> 
-                            Specific Add-ons
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="addons-container">
-                            <!-- Injected by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Summary -->
-                <div class="lg:col-span-4">
-                    <div class="bg-obsidian border border-white/10 p-6 sm:p-8 rounded-sm sticky top-28 shadow-2xl">
-                        <h3 class="text-sm font-black text-white uppercase tracking-widest mb-6 pb-4 border-b border-white/10">Estimate Summary</h3>
-                        
-                        <div class="space-y-3 text-sm mb-6 pb-6 border-b border-white/10" id="quote-line-items">
-                            <!-- Populated by JS -->
-                        </div>
-
-                        <div class="flex items-end justify-between mb-3">
-                            <span class="text-textMuted text-sm font-semibold uppercase tracking-wider">Estimated Total</span>
-                            <span class="text-2xl font-mono font-bold text-white" id="quote-total">$0</span>
-                        </div>
-                        <div class="flex items-end justify-between mb-8 bg-panel p-4 rounded-sm border border-white/5">
-                            <div class="flex flex-col">
-                                <span class="text-white font-black uppercase text-sm tracking-wider">50% Deposit</span>
-                                <span class="text-[10px] text-textMuted uppercase mt-1">Required to book</span>
-                            </div>
-                            <span class="text-xl font-mono font-bold text-crimson" id="quote-deposit">$0</span>
-                        </div>
-
-                        <div class="space-y-4">
-                            <a id="sms-btn" href="#" class="block w-full py-4 bg-crimson hover:bg-crimsonHover text-white text-center font-bold text-sm uppercase tracking-wider transition-colors rounded-sm shadow-[0_5px_20px_rgba(230,0,0,0.25)] flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> Text to Book
-                            </a>
-                            <p class="text-[11px] text-textMuted text-center leading-relaxed font-mono">
-                                Tapping will format a text message with your quote details to <span class="text-white font-bold">(843) 450-5051</span>.<br>Final price confirmed in-person.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- RV/BOATS & FAQ -->
-    <section class="py-24 px-5 bg-panel border-b border-white/5">
-        <div class="max-w-4xl mx-auto space-y-16">
-            
-            <!-- RV/Boat Banner -->
-            <div class="bg-gradient-to-r from-obsidian to-[#111] border border-white/10 p-8 rounded-sm flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-                <div>
-                    <h3 class="text-xl font-black text-white uppercase tracking-tight flex items-center gap-3 mb-2">
-                        <i class="fa-solid fa-ship text-crimson"></i> RV, Boats & Specialty
+            <div class="space-y-4">
+                <div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors">
+                    <h3 class="text-white font-bold text-base sm:text-lg mb-2 flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-question text-crimson mt-1"></i>
+                        <span>Do you come to my location?</span>
                     </h3>
-                    <p class="text-textMuted text-sm leading-relaxed max-w-lg">Pricing varies heavily by condition and size. Contact us directly to discuss your specific needs and get a custom quote.</p>
+                    <p class="text-textMuted text-sm leading-relaxed pl-6">
+                        Yes, we come directly to your driveway. We only require access to a standard water spigot and a 110V electrical outlet to perform your service.
+                    </p>
                 </div>
-                <a href="sms:18434505051" class="shrink-0 px-8 py-3 border border-crimson text-crimson hover:bg-crimson hover:text-white font-bold text-sm uppercase tracking-wide rounded-sm transition-colors w-full md:w-auto text-center">
-                    Message Us
+
+                <div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors">
+                    <h3 class="text-white font-bold text-base sm:text-lg mb-2 flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-question text-crimson mt-1"></i>
+                        <span>Can you service my vehicle at my workplace, gym, or apartment complex?</span>
+                    </h3>
+                    <p class="text-textMuted text-sm leading-relaxed pl-6">
+                        No. At this time, we cannot service vehicles at job sites, gyms, or public locations where we do not have dedicated access to water and electricity.
+                    </p>
+                </div>
+
+                <div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors">
+                    <h3 class="text-white font-bold text-base sm:text-lg mb-2 flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-question text-crimson mt-1"></i>
+                        <span>Are the online quote prices final?</span>
+                    </h3>
+                    <p class="text-textMuted text-sm leading-relaxed pl-6">
+                        Prices shown online are estimated amounts based on vehicle size and standard condition. Your final quote is discussed by message and confirmed during a quick in-person walkaround inspection with you before we begin the job.
+                    </p>
+                </div>
+
+                <div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors">
+                    <h3 class="text-white font-bold text-base sm:text-lg mb-2 flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-question text-crimson mt-1"></i>
+                        <span>What areas do you service?</span>
+                    </h3>
+                    <p class="text-textMuted text-sm leading-relaxed pl-6">
+                        We provide mobile detailing throughout the Greater Jacksonville, FL area—including North Jacksonville, St. Johns, Orange Park, and Jacksonville Beach. Long-distance service outside our primary radius may be subject to a travel fee.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECT CONTACT / GENERAL INQUIRIES SECTION -->
+    <section id="contact" class="py-20 px-4 sm:px-6 border-b border-white/10 bg-panel/30">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="text-crimson text-xs font-bold uppercase tracking-widest block mb-2">Ready For Showroom Shine?</span>
+            <h2 class="text-3xl font-black text-white uppercase tracking-tight mb-4">Book Or Send An Inquiry</h2>
+            <p class="text-textMuted text-sm mb-8 max-w-xl mx-auto">
+                Have a specific question about your vehicle or already received your quote? Reach out directly by text, phone, or complete your deposit online.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="sms:18434505051" class="p-5 bg-panel border border-white/10 hover:border-crimson rounded-xl transition-all flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-comment-sms text-2xl text-crimson"></i>
+                    <span class="text-white font-bold text-sm uppercase">Text Us Directly</span>
+                    <span class="text-xs text-textMuted">(843) 450-5051</span>
+                </a>
+
+                <a href="https://square.link/u/P4jxiQOm?src=sheet" target="_blank" rel="noopener noreferrer" class="p-5 bg-panel border border-crimson/50 hover:bg-crimson/10 rounded-xl transition-all flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-credit-card text-2xl text-crimson"></i>
+                    <span class="text-white font-bold text-sm uppercase">Pay 50% Deposit</span>
+                    <span class="text-xs text-textMuted">Square Secure Checkout</span>
+                </a>
+
+                <a href="https://www.instagram.com/kaoz_detailing" target="_blank" rel="noopener noreferrer" class="p-5 bg-panel border border-white/10 hover:border-crimson rounded-xl transition-all flex flex-col items-center justify-center gap-2">
+                    <i class="fa-brands fa-instagram text-2xl text-crimson"></i>
+                    <span class="text-white font-bold text-sm uppercase">Instagram</span>
+                    <span class="text-xs text-textMuted">@Kaoz_Detailing</span>
                 </a>
             </div>
-
-            <!-- FAQ -->
-            <div>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-10 tracking-tight uppercase text-center">Frequently Asked Questions</h2>
-                <div class="space-y-6">
-                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
-                        <h4 class="text-white font-bold text-lg mb-2">Do you come to my location?</h4>
-                        <p class="text-textMuted text-sm leading-relaxed">Yes, we provide convenient mobile service directly to your driveway. We only require access to an outdoor water spigot and an electrical outlet.</p>
-                    </div>
-                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
-                        <h4 class="text-white font-bold text-lg mb-2">Can you detail my car at my job site or gym?</h4>
-                        <p class="text-textMuted text-sm leading-relaxed">Currently, we cannot service vehicles at locations like job sites or gyms where we do not have direct access to water and electricity.</p>
-                    </div>
-                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
-                        <h4 class="text-white font-bold text-lg mb-2">Are the prices on the website final?</h4>
-                        <p class="text-textMuted text-sm leading-relaxed">The prices listed are estimated starting rates based on standard vehicle sizes and conditions. The final quote is discussed via message and confirmed during a brief in-person inspection with you before the job begins.</p>
-                    </div>
-                    <div class="bg-obsidian border border-white/5 p-6 rounded-sm">
-                        <h4 class="text-white font-bold text-lg mb-2">What areas do you service?</h4>
-                        <p class="text-textMuted text-sm leading-relaxed">We proudly serve the greater Jacksonville, FL area, including North Jacksonville, St. Johns, Orange Park, and Jacksonville Beach. Please note that extended travel outside our primary service radius may be subject to a mileage fee.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <section class="py-24 px-5 border-b border-white/5">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight uppercase">Still have questions?</h2>
-                <p class="text-textMuted text-sm">Fill out the form below and we will get back to you.</p>
-            </div>
-
-            <form id="contact-form" class="bg-panel border border-white/5 p-8 rounded-sm space-y-6" onsubmit="event.preventDefault(); this.innerHTML = '<div class=\'text-center py-10 fade-in\'><i class=\'fa-solid fa-circle-check text-emerald-500 text-4xl mb-4\'></i><h3 class=\'text-white font-bold text-xl\'>Inquiry Sent</h3><p class=\'text-textMuted text-sm mt-2\'>We will review your details and get back to you shortly.</p></div>';">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Name</label>
-                        <input type="text" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Phone</label>
-                        <input type="tel" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Email</label>
-                        <input type="email" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Vehicle Make/Model</label>
-                        <input type="text" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-textMuted uppercase tracking-wider mb-2">Service(s) Requested & Questions</label>
-                    <textarea rows="4" required class="w-full bg-obsidian border border-white/10 p-3.5 text-white text-sm rounded-sm focus:border-crimson focus:ring-1 focus:ring-crimson transition-all resize-none"></textarea>
-                </div>
-                <button type="submit" class="w-full py-4 bg-crimson hover:bg-crimsonHover text-white font-bold text-sm uppercase tracking-wide rounded-sm transition-colors mt-2">
-                    Send Inquiry
-                </button>
-            </form>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-16 px-5 bg-obsidian border-t border-white/5">
+    <footer class="py-14 px-4 sm:px-6 bg-obsidian">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="flex flex-col items-center md:items-start gap-4">
-                
-                <!-- CSS Logo (Muted) -->
-                <div class="flex flex-col items-start leading-none tracking-tighter opacity-50 hover:opacity-100 transition-opacity">
-                    <div class="text-2xl font-black flex items-baseline">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#ffffff] via-[#d4d4d8] to-[#71717a]">KAO</span>
-                        <span class="text-crimson">Z</span>
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <!-- Pure CSS 3D Metallic Logo (No Car) -->
+                <a href="#" class="kaoz-logo-wrap mb-3">
+                    <div class="kaoz-logo-main text-2xl">
+                        <span class="kaoz-chrome">KAO</span><span class="kaoz-crimson-z">Z</span>
                     </div>
-                    <div class="text-[7px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d4d4d8] to-[#a1a1aa] tracking-[0.45em] uppercase mt-0.5 w-full pl-[1px]">
-                        DETAILING
-                    </div>
-                </div>
-
-                <div class="text-center md:text-left text-xs text-textMuted font-mono">
-                    &copy; 2026 Kaoz Detailing Co. All rights reserved.<br>
-                    <a href="tel:8434505051" class="hover:text-white transition-colors">843-450-5051</a>
-                </div>
+                    <div class="kaoz-logo-sub text-[8px]">DETAILING</div>
+                    <div class="kaoz-logo-blade"></div>
+                </a>
+                <p class="text-textMuted text-xs uppercase tracking-widest font-bold mt-1">
+                    Full Service to Your Driveway &bull; Jacksonville, FL
+                </p>
+                <p class="text-xs text-zinc-500 mt-2">
+                    &copy; 2026 Kaoz Detailing Co. All rights reserved.
+                </p>
             </div>
 
-            <div>
-                <a href="https://www.instagram.com/kaoz_detailing?exln=YWFvOHIyeG5kbDN2&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center rounded-sm bg-panel border border-white/10 hover:border-crimson hover:text-white text-textMuted hover:bg-crimson transition-all group">
-                    <i class="fa-brands fa-instagram text-xl group-hover:scale-110 transition-transform"></i>
+            <div class="flex flex-col items-center md:items-end gap-2">
+                <a href="tel:18434505051" class="text-lg font-black text-white hover:text-crimson transition-colors">
+                    (843) 450-5051
                 </a>
+                <div class="flex items-center gap-4 text-xs text-textMuted">
+                    <a href="https://square.link/u/P4jxiQOm?src=sheet" target="_blank" rel="noopener noreferrer" class="hover:text-white underline">Deposit Portal</a>
+                    <span>&bull;</span>
+                    <a href="https://www.instagram.com/kaoz_detailing" target="_blank" rel="noopener noreferrer" class="hover:text-white underline">@Kaoz_Detailing</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JS LOGIC -->
+    <!-- INTERACTIVE QUOTE CALCULATOR JAVASCRIPT -->
     <script>
-        // Core Packages Definition (Fixed: All large surcharges are +$40)
-        const packages = {
-            exterior: { name: 'Kaoz Exterior', baseSm: 89, addLg: 40 },
-            interior: { name: 'Kaoz Interior', baseSm: 129, addLg: 40 },
-            full: { name: 'Kaoz Full', baseSm: 219, addLg: 40 },
-            reset: { name: 'Kaoz Reset', baseSm: 349, addLg: 40 }
+        const PACKAGES = {
+            exterior: { name: 'Kaoz Exterior', basePrice: 89 },
+            interior: { name: 'Kaoz Interior', basePrice: 129 },
+            full:     { name: 'Kaoz Full',     basePrice: 219 },
+            reset:    { name: 'Kaoz Reset',    basePrice: 349 }
         };
 
-        // All Possible Add-ons
-        const allAddons = [
-            { id: 'engine', name: 'Engine Bay', price: 79 },
-            { id: 'pethair', name: 'Heavy Pet Hair', price: 49 },
-            { id: 'odor', name: 'Odor Removal', price: 69 },
-            { id: 'seatshampoo', name: 'Seat Shampoo/Extraction', price: 49 },
-            { id: 'carpetshampoo', name: 'Carpet Shampoo/Extraction', price: 49 },
-            { id: 'headliner', name: 'Headliner', price: 49 },
-            { id: 'trim', name: 'Trim Restorer', price: 49 },
-            { id: 'leather', name: 'Leather Conditioner', price: 29 },
-            { id: 'ceramic', name: 'Ceramic Int. Protection', price: 49 },
-            { id: 'mats', name: 'Rubber Mats Deep Clean', price: 19 },
-            { id: 'steam', name: 'Steam Cleaning', price: 29 },
-            { id: 'childseat', name: 'Child Seat (Cust. Reinstalls)', price: 29 },
-            { id: 'reset_exterior', name: 'Exterior Wash (Add-on)', price: 89 }
-        ];
-
-        // Add-ons to explicitly disable/hide when 'Kaoz Reset' is chosen
-        const resetIncludedAddons = ['seatshampoo', 'carpetshampoo', 'headliner', 'leather', 'ceramic', 'mats', 'steam'];
-
-        // Inject HTML
-        const addonsContainer = document.getElementById('addons-container');
-        allAddons.forEach(addon => {
-            const html = `
-                <label class="cursor-pointer block relative addon-wrapper" id="wrapper-${addon.id}">
-                    <input type="checkbox" value="${addon.id}" id="chk-${addon.id}" class="sr-only custom-checkbox calc-addon" onchange="calculateQuote()">
-                    <div class="p-4 border border-white/10 bg-obsidian transition-colors flex items-center justify-between rounded-sm h-full">
-                        <div class="flex items-center gap-3">
-                            <div class="check-indicator w-4 h-4 rounded-sm border border-white/20 flex shrink-0 items-center justify-center transition-colors">
-                                <i class="fa-solid fa-check text-[10px] text-white opacity-0 transition-opacity"></i>
-                            </div>
-                            <span class="text-xs font-bold text-white uppercase tracking-wider addon-label">${addon.name}</span>
-                        </div>
-                        <span class="text-xs text-crimson font-mono font-bold shrink-0 ml-2">+$${addon.price}</span>
-                    </div>
-                </label>
-            `;
-            addonsContainer.insertAdjacentHTML('beforeend', html);
-        });
-
-        // External function to trigger package select from hero/package cards
-        function selectPackage(pkgId) {
-            document.querySelector(`input[name="calc-pkg"][value="${pkgId}"]`).checked = true;
-            calculateQuote();
-            
-            // Small offset for fixed header
-            const yOffset = -100; 
-            const element = document.getElementById('calculator');
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({top: y, behavior: 'smooth'});
+        // Helper to jump from a Package Card straight into the Calculator
+        function selectPackageInCalc(pkgKey) {
+            const selectEl = document.getElementById('calc-package');
+            if (selectEl) {
+                selectEl.value = pkgKey;
+                calculateQuote();
+                document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
-        // Main Calculation and UI adjustment Logic
-        function calculateQuote() {
-            const size = document.querySelector('input[name="calc-size"]:checked').value;
-            const pkgKey = document.querySelector('input[name="calc-pkg"]:checked').value;
-            const pkg = packages[pkgKey];
-            
-            const isReset = (pkgKey === 'reset');
-            const warningEl = document.getElementById('reset-warning');
+        // Helper to lock or unlock an add-on based on whether it is already included in the package
+        function setAddonLockState(idSuffix, isIncluded) {
+            const checkbox = document.getElementById('addon-' + idSuffix);
+            const wrapper = document.getElementById('wrap-addon-' + idSuffix);
+            const badge = document.getElementById('badge-addon-' + idSuffix);
+            const startLabel = document.getElementById('start-addon-' + idSuffix);
 
-            // 1. Handle dynamic visibility and disabling of add-ons
-            if (isReset) {
-                warningEl.classList.remove('hidden');
-                
-                // Hide/disable included add-ons
-                resetIncludedAddons.forEach(id => {
-                    const chk = document.getElementById(`chk-${id}`);
-                    const wrapper = document.getElementById(`wrapper-${id}`);
-                    chk.checked = false;
-                    chk.disabled = true;
-                    // Visually mute them
-                    wrapper.style.display = 'none'; 
-                });
+            if (!checkbox || !wrapper || !badge) return;
 
-                // Ensure "Exterior Wash Add-on" is visible
-                document.getElementById('wrapper-reset_exterior').style.display = 'block';
-
+            if (isIncluded) {
+                checkbox.checked = true;
+                checkbox.disabled = true;
+                wrapper.classList.add('opacity-60', 'pointer-events-none', 'border-emerald-500/40');
+                badge.innerText = 'INCLUDED';
+                badge.classList.remove('text-crimson');
+                badge.classList.add('text-emerald-400', 'text-xs');
+                if (startLabel) startLabel.classList.add('hidden');
             } else {
-                warningEl.classList.add('hidden');
-                
-                // Enable and show standard add-ons
-                resetIncludedAddons.forEach(id => {
-                    const chk = document.getElementById(`chk-${id}`);
-                    const wrapper = document.getElementById(`wrapper-${id}`);
-                    chk.disabled = false;
-                    wrapper.style.display = 'block';
-                });
+                if (checkbox.disabled) {
+                    checkbox.checked = false;
+                }
+                checkbox.disabled = false;
+                wrapper.classList.remove('opacity-60', 'pointer-events-none', 'border-emerald-500/40');
+                badge.innerText = '+$' + checkbox.value;
+                badge.classList.add('text-crimson');
+                badge.classList.remove('text-emerald-400', 'text-xs');
+                if (startLabel) startLabel.classList.remove('hidden');
+            }
+        }
 
-                // Hide and uncheck "Exterior Wash Add-on"
-                const extChk = document.getElementById('chk-reset_exterior');
-                extChk.checked = false;
-                document.getElementById('wrapper-reset_exterior').style.display = 'none';
+        function calculateQuote() {
+            const pkgKey = document.getElementById('calc-package').value;
+            const sizeSurcharge = parseInt(document.getElementById('calc-size').value, 10) || 0;
+            const qty = parseInt(document.getElementById('calc-qty').value, 10) || 1;
+
+            const pkgObj = PACKAGES[pkgKey];
+            const isLarge = sizeSurcharge > 0;
+            const sizeLabel = isLarge ? 'Large SUV/Truck' : 'Small/Sedan';
+
+            // 1. Handle Kaoz Reset lockouts (Seat Shampoo, Carpet Shampoo, Steam Cleaning, Leather Conditioner, Rubber Floor Mats are included)
+            const isReset = (pkgKey === 'reset');
+            setAddonLockState('seats', isReset);
+            setAddonLockState('carpets', isReset);
+            setAddonLockState('steam', isReset);
+            setAddonLockState('leather', isReset);
+            setAddonLockState('mats', isReset);
+
+            const lockoutHint = document.getElementById('included-lockout-hint');
+            if (isReset) {
+                lockoutHint.classList.remove('hidden');
+            } else {
+                lockoutHint.classList.add('hidden');
             }
 
-            // 2. Calculate Pricing
-            const basePrice = pkg.baseSm;
-            const surcharge = (size === 'large') ? pkg.addLg : 0;
-            
-            let addonsTotal = 0;
-            let addonsList = [];
-            
-            const selectedAddonNodes = document.querySelectorAll('.calc-addon:checked');
-            selectedAddonNodes.forEach(node => {
-                const addonObj = allAddons.find(a => a.id === node.value);
-                if (addonObj) {
-                    addonsTotal += addonObj.price;
-                    addonsList.push(addonObj);
+            // 2. Handle Kaoz Exterior pop-up add-on when Kaoz Reset is selected
+            const resetExtContainer = document.getElementById('reset-exterior-container');
+            const resetExtCheckbox = document.getElementById('addon-reset-exterior');
+            const resetExtBadge = document.getElementById('reset-exterior-price-badge');
+            const resetExteriorAddonPrice = isLarge ? 129 : 89;
+
+            if (isReset) {
+                resetExtContainer.classList.remove('hidden');
+                resetExtBadge.innerText = '+$' + resetExteriorAddonPrice;
+            } else {
+                resetExtContainer.classList.add('hidden');
+                resetExtCheckbox.checked = false;
+            }
+
+            // 3. Calculate per-vehicle base package price
+            const singleVehiclePackagePrice = pkgObj.basePrice + sizeSurcharge;
+
+            // 4. Sum active (non-disabled) add-ons across Exterior and Interior categories
+            let addonsPerVehicle = 0;
+            let selectedAddonNames = [];
+
+            if (isReset && resetExtCheckbox.checked) {
+                addonsPerVehicle += resetExteriorAddonPrice;
+                selectedAddonNames.push('Kaoz Exterior Detail (+$' + resetExteriorAddonPrice + ')');
+            }
+
+            const addonIds = [
+                // Exterior Add-Ons (High to Low)
+                'engine',
+                'trim',
+                'glass',
+                'rim',
+                // Interior Add-Ons (High to Low)
+                'odor',
+                'seats',
+                'carpets',
+                'pethair',
+                'headliner',
+                'ceramicleather',
+                'ceramicinterior',
+                'steam',
+                'leather',
+                'childseat',
+                'mats'
+            ];
+
+            addonIds.forEach(id => {
+                const cb = document.getElementById('addon-' + id);
+                if (cb && cb.checked && !cb.disabled) {
+                    const val = parseInt(cb.value, 10) || 0;
+                    addonsPerVehicle += val;
+                    selectedAddonNames.push(cb.getAttribute('data-label'));
                 }
             });
 
-            const total = basePrice + surcharge + addonsTotal;
-            const deposit = total / 2;
+            // 5. Calculate Multi-Vehicle totals & discounts ($20 off per vehicle when 2+ booked)
+            const rawSubtotal = (singleVehiclePackagePrice + addonsPerVehicle) * qty;
+            const discountTotal = qty >= 2 ? (qty * 20) : 0;
+            const grandTotal = rawSubtotal - discountTotal;
+            const depositAmount = grandTotal / 2;
 
-            // 3. Update Summary UI
-            const lineItemsEl = document.getElementById('quote-line-items');
-            let linesHtml = `
-                <div class="flex justify-between items-end mb-2">
-                    <span class="text-white font-bold uppercase tracking-wider">${pkg.name}</span>
-                    <span class="font-mono text-white">$${basePrice}</span>
-                </div>
-            `;
-            
-            if (surcharge > 0) {
-                linesHtml += `
-                    <div class="flex justify-between items-end mt-2">
-                        <span class="text-textMuted text-xs uppercase tracking-wider">Size: Large (SUV/Truck)</span>
-                        <span class="font-mono text-crimson text-xs">+$${surcharge}</span>
-                    </div>
-                `;
+            // 6. Update Summary UI
+            const qtyPrefix = qty > 1 ? (qty + 'x ') : '';
+            document.getElementById('summary-pkg-line').innerText = `${qtyPrefix}${pkgObj.name} (${sizeLabel})`;
+            document.getElementById('summary-pkg-price').innerText = `$${(singleVehiclePackagePrice * qty).toFixed(2)}`;
+
+            const addonsRow = document.getElementById('summary-addons-row');
+            if (addonsPerVehicle > 0) {
+                addonsRow.classList.remove('hidden');
+                document.getElementById('summary-addons-list').innerText = (qty > 1 ? `${qty}x ` : '') + selectedAddonNames.join(', ');
+                document.getElementById('summary-addons-price').innerText = `+$${(addonsPerVehicle * qty).toFixed(2)}`;
             } else {
-                 linesHtml += `
-                    <div class="flex justify-between items-end mt-2">
-                        <span class="text-textMuted text-xs uppercase tracking-wider">Size: Sedan/Coupe</span>
-                        <span class="font-mono text-textMuted text-xs">+$0</span>
-                    </div>
-                `;
+                addonsRow.classList.add('hidden');
             }
 
-            if (addonsList.length > 0) {
-                linesHtml += `<div class="mt-4 pt-4 border-t border-white/5 space-y-2">`;
-                addonsList.forEach(a => {
-                    linesHtml += `
-                        <div class="flex justify-between items-end">
-                            <span class="text-textMuted text-xs">+ ${a.name}</span>
-                            <span class="font-mono text-textMuted text-xs">+$${a.price}</span>
-                        </div>
-                    `;
-                });
-                linesHtml += `</div>`;
+            const discountRow = document.getElementById('summary-discount-row');
+            if (discountTotal > 0) {
+                discountRow.classList.remove('hidden');
+                document.getElementById('summary-discount-label').innerText = `Multi-Vehicle Discount (${qty} Vehicles @ $20 Off Each)`;
+                document.getElementById('summary-discount-amount').innerText = `-$${discountTotal.toFixed(2)}`;
+            } else {
+                discountRow.classList.add('hidden');
             }
 
-            lineItemsEl.innerHTML = linesHtml;
-            
-            // 4. Update Totals
-            document.getElementById('quote-total').innerText = `$${total}`;
-            document.getElementById('quote-deposit').innerText = `$${deposit.toFixed(2).replace(/\.00$/, '')}`;
+            const formattedTotal = `$${grandTotal.toFixed(2)}`;
+            const formattedDeposit = `$${depositAmount.toFixed(2)}`;
 
-            // 5. Build SMS Link
-            const sizeText = size === 'large' ? 'Large (Truck/SUV)' : 'Sedan/Coupe';
-            const addonText = addonsList.length > 0 ? addonsList.map(a => a.name).join(', ') : 'None';
-            
-            const smsBody = `Hi KAOZ DETAILING! I'd like to book an appointment.\n\nPackage: ${pkg.name}\nSize: ${sizeText}\nAdd-ons: ${addonText}\n\nEstimated Total: $${total}\nReady to pay 50% deposit: $${deposit.toFixed(2).replace(/\.00$/, '')}`;
-            
-            document.getElementById('sms-btn').href = `sms:18434505051?&body=${encodeURIComponent(smsBody)}`;
+            document.getElementById('display-total').innerText = formattedTotal;
+            document.getElementById('display-deposit').innerText = formattedDeposit;
+            document.getElementById('btn-deposit-amt').innerText = formattedDeposit;
+            document.getElementById('note-deposit-amt').innerText = formattedDeposit;
+
+            // 7. Build pre-filled SMS body for 843-450-5051
+            const addonsText = selectedAddonNames.length > 0 ? selectedAddonNames.join(', ') : 'None';
+            const smsLines = [
+                `Hi KAOZ DETAILING! I'd like to book a detail:`,
+                `- Package: ${pkgObj.name}`,
+                `- Vehicle Size: ${sizeLabel}`,
+                `- Vehicles: ${qty}`,
+                `- Add-Ons: ${addonsText}`,
+                `- Est. Total: ${formattedTotal}`,
+                `- 50% Deposit: ${formattedDeposit}`,
+                `I have driveway water & power access ready.`
+            ];
+            const smsHref = `sms:18434505051?&body=${encodeURIComponent(smsLines.join('\n'))}`;
+            document.getElementById('sms-quote-btn').href = smsHref;
         }
 
-        // Initialize calculator on first load
-        window.addEventListener('DOMContentLoaded', () => {
-            calculateQuote();
-        });
+        // Copy 50% deposit amount to clipboard so customer can paste it into Square
+        function copyDepositAmount() {
+            const depText = document.getElementById('display-deposit').innerText.replace('$', '');
+            const tempInput = document.createElement('input');
+            tempInput.value = depText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const copyBtnText = document.getElementById('copy-btn-text');
+            copyBtnText.innerText = 'Copied!';
+            setTimeout(() => {
+                copyBtnText.innerText = 'Copy';
+            }, 2000);
+        }
+
+        window.addEventListener('DOMContentLoaded', calculateQuote);
     </script>
 </body>
 </html>
